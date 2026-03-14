@@ -4,52 +4,52 @@
 "use strict";
 
 /* ============================================================
-   THEME TOGGLE
+   THEME TOGGLE — default light, saved in localStorage
    ============================================================ */
 const html = document.documentElement;
 const themeToggle = document.getElementById("themeToggle");
 const themeIcon = document.getElementById("themeIcon");
 
-const savedTheme = localStorage.getItem("ks-theme") || "dark";
+// Default = light unless user previously changed it
+const savedTheme = localStorage.getItem("ks-theme") || "light";
 html.setAttribute("data-theme", savedTheme);
-applyThemeIcon(savedTheme);
+applyIcon(savedTheme);
 
 themeToggle.addEventListener("click", () => {
-  const next = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  const next = html.getAttribute("data-theme") === "light" ? "dark" : "light";
   html.setAttribute("data-theme", next);
   localStorage.setItem("ks-theme", next);
-  applyThemeIcon(next);
+  applyIcon(next);
 });
 
-function applyThemeIcon(theme) {
-  themeIcon.className = theme === "dark" ? "fas fa-sun" : "fas fa-moon";
+function applyIcon(theme) {
+  themeIcon.className = theme === "light" ? "fas fa-moon" : "fas fa-sun";
   themeToggle.title =
-    theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode";
+    theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode";
 }
 
 /* ============================================================
-   NAVBAR — scroll shadow boost + active link
+   NAVBAR — active link + scroll shadow
    ============================================================ */
 const navbar = document.getElementById("navbar");
 const navLinks = document.querySelectorAll(".nav-link");
 const backToTop = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
-  /* Slightly deeper shadow on scroll */
-  if (window.scrollY > 10) {
-    navbar.style.boxShadow = "0 4px 24px rgba(0,0,0,0.28)";
-  } else {
-    navbar.style.boxShadow = "0 2px 16px rgba(0,0,0,0.18)";
-  }
+  // Deeper shadow on scroll
+  navbar.style.boxShadow =
+    window.scrollY > 10
+      ? "0 4px 24px rgba(0,0,0,0.16)"
+      : "0 2px 16px rgba(0,0,0,0.10)";
 
-  /* Back-to-top visibility */
+  // Back-to-top visibility
   backToTop.classList.toggle("show", window.scrollY > 400);
 
-  /* Active nav link */
+  // Active nav link detection
   const sections = document.querySelectorAll("section[id]");
   let current = "";
   sections.forEach((sec) => {
-    if (window.scrollY >= sec.offsetTop - 90) current = sec.getAttribute("id");
+    if (window.scrollY >= sec.offsetTop - 100) current = sec.getAttribute("id");
   });
   navLinks.forEach((link) => {
     link.classList.toggle(
@@ -71,9 +71,7 @@ hamburger.addEventListener("click", (e) => {
   navMenu.classList.toggle("open");
 });
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", closeMenu);
-});
+navLinks.forEach((link) => link.addEventListener("click", closeMenu));
 
 document.addEventListener("click", (e) => {
   if (!navbar.contains(e.target)) closeMenu();
@@ -85,12 +83,12 @@ function closeMenu() {
 }
 
 /* ============================================================
-   HERO CAROUSEL
+   HERO CAROUSEL — auto slide every 4s
    ============================================================ */
 const slides = document.querySelectorAll(".hero-slide");
 const dots = document.querySelectorAll(".dot");
 let current = 0;
-let timer = null;
+let autoTimer = null;
 
 function goTo(index) {
   slides[current].classList.remove("active");
@@ -101,10 +99,10 @@ function goTo(index) {
 }
 
 function startCarousel() {
-  timer = setInterval(() => goTo(current + 1), 4000);
+  autoTimer = setInterval(() => goTo(current + 1), 4000);
 }
 function resetCarousel() {
-  clearInterval(timer);
+  clearInterval(autoTimer);
   startCarousel();
 }
 
@@ -125,7 +123,6 @@ const formSuccess = document.getElementById("formSuccess");
 
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
   const name = contactForm.name.value.trim();
   const email = contactForm.email.value.trim();
   const message = contactForm.message.value.trim();
@@ -155,9 +152,9 @@ contactForm.addEventListener("submit", (e) => {
 /* ============================================================
    BACK TO TOP
    ============================================================ */
-backToTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+backToTop.addEventListener("click", () =>
+  window.scrollTo({ top: 0, behavior: "smooth" }),
+);
 
 /* ============================================================
    FOOTER YEAR
@@ -165,7 +162,7 @@ backToTop.addEventListener("click", () => {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 /* ============================================================
-   SCROLL REVEAL
+   SCROLL REVEAL — IntersectionObserver
    ============================================================ */
 const revealEls = document.querySelectorAll(
   ".service-card, .product-card, .portfolio-item, .blog-card, .about-grid, .contact-grid",
@@ -175,13 +172,13 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        const delay = entry.target.dataset.delay || "0s";
-        entry.target.style.animation = `fadeInUp 0.55s ease ${delay} forwards`;
+        const d = entry.target.dataset.delay || "0s";
+        entry.target.style.animation = `fadeInUp 0.55s ease ${d} forwards`;
         observer.unobserve(entry.target);
       }
     });
   },
-  { threshold: 0.1 },
+  { threshold: 0.08 },
 );
 
 revealEls.forEach((el, i) => {
