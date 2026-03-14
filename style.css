@@ -1,83 +1,98 @@
 /* ============================================================
-   KargouSoft – style.css  (Dark + Light Mode)
+   KargouSoft — style.css
+   Dark Mode Default | Light Mode Toggle
    ============================================================ */
 
-/* ---- DARK MODE (Default) ---- */
+/* ---- DARK MODE Variables ---- */
 :root {
   --primary: #ff6500;
   --primary-dark: #cc5000;
   --primary-light: #ff8533;
 
+  /* Navbar */
+  --nav-bg: #404041;
+  --nav-border: rgba(255, 255, 255, 0.08);
+  --nav-link-color: rgba(255, 255, 255, 0.88);
+  --nav-link-hover: #ffffff;
+  --nav-logo-color: #ffffff;
+  --hamburger-color: #ffffff;
+
+  /* Page backgrounds */
   --bg: #111214;
   --bg-2: #1a1c1f;
   --bg-3: #23262b;
   --card-bg: #1e2025;
   --border: rgba(255, 255, 255, 0.08);
 
+  /* Text */
   --text: #e4e6ea;
   --text-muted: #9a9da5;
   --heading: #ffffff;
-  --logo-main: #ffffff;
 
+  /* Inputs */
   --input-bg: #1e2025;
+  --input-border: rgba(255, 255, 255, 0.1);
   --input-focus: rgba(255, 101, 0, 0.15);
+  --placeholder: #6b6e76;
 
-  --nav-scrolled-bg: rgba(17, 18, 20, 0.96);
+  /* Hero */
   --hero-overlay: linear-gradient(
     135deg,
-    rgba(17, 18, 20, 0.85) 0%,
-    rgba(17, 18, 20, 0.55) 50%,
-    rgba(255, 101, 0, 0.15) 100%
+    rgba(17, 18, 20, 0.82) 0%,
+    rgba(17, 18, 20, 0.55) 55%,
+    rgba(255, 101, 0, 0.14) 100%
   );
-  --hero-title-color: #ffffff;
-  --hero-sub-color: rgba(255, 255, 255, 0.72);
-  --hero-badge-bg: rgba(255, 101, 0, 0.15);
-  --hero-badge-border: rgba(255, 101, 0, 0.35);
-  --hero-badge-color: #ff8533;
 
+  /* Shadows */
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.25);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.28);
+
+  /* Misc */
   --font: "Poppins", sans-serif;
   --radius: 12px;
   --radius-lg: 20px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --nav-height: 70px;
+  --nav-height: 68px;
 }
 
-/* ---- LIGHT MODE ---- */
+/* ---- LIGHT MODE Variables ---- */
 [data-theme="light"] {
+  --nav-bg: #ffffff;
+  --nav-border: rgba(0, 0, 0, 0.1);
+  --nav-link-color: #404041;
+  --nav-link-hover: #111214;
+  --nav-logo-color: #111214;
+  --hamburger-color: #404041;
+
   --bg: #f4f5f7;
   --bg-2: #ffffff;
   --bg-3: #eaecf0;
   --card-bg: #ffffff;
-  --border: rgba(0, 0, 0, 0.09);
+  --border: rgba(0, 0, 0, 0.08);
 
   --text: #444750;
   --text-muted: #80848f;
   --heading: #111214;
-  --logo-main: #111214;
 
   --input-bg: #f4f5f7;
-  --input-focus: rgba(255, 101, 0, 0.08);
+  --input-border: rgba(0, 0, 0, 0.12);
+  --input-focus: rgba(255, 101, 0, 0.1);
+  --placeholder: #aeb2bc;
 
-  --nav-scrolled-bg: rgba(255, 255, 255, 0.97);
   --hero-overlay: linear-gradient(
     135deg,
-    rgba(10, 10, 10, 0.72) 0%,
-    rgba(10, 10, 10, 0.5) 50%,
-    rgba(255, 101, 0, 0.18) 100%
+    rgba(10, 10, 10, 0.75) 0%,
+    rgba(10, 10, 10, 0.48) 55%,
+    rgba(255, 101, 0, 0.16) 100%
   );
-  --hero-title-color: #ffffff;
-  --hero-sub-color: rgba(255, 255, 255, 0.8);
-  --hero-badge-bg: rgba(255, 101, 0, 0.18);
-  --hero-badge-border: rgba(255, 101, 0, 0.4);
-  --hero-badge-color: #d45300;
 
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* ---- Reset ---- */
+/* ============================================================
+   RESET
+   ============================================================ */
 *,
 *::before,
 *::after {
@@ -95,8 +110,8 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   transition:
-    background 0.4s ease,
-    color 0.4s ease;
+    background 0.35s ease,
+    color 0.35s ease;
 }
 a {
   text-decoration: none;
@@ -118,7 +133,9 @@ button {
   outline: none;
 }
 
-/* ---- Utility ---- */
+/* ============================================================
+   UTILITY
+   ============================================================ */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -131,6 +148,7 @@ button {
   text-align: center;
   margin-bottom: 60px;
 }
+
 .section-label {
   display: inline-block;
   background: rgba(255, 101, 0, 0.12);
@@ -160,7 +178,9 @@ button {
   color: var(--primary);
 }
 
-/* ---- Buttons ---- */
+/* ============================================================
+   BUTTONS
+   ============================================================ */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -185,7 +205,7 @@ button {
 .btn-outline {
   background: transparent;
   color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.42);
 }
 .btn-outline:hover {
   border-color: var(--primary);
@@ -202,7 +222,7 @@ button {
 }
 
 /* ============================================================
-   NAVBAR
+   NAVBAR  —  always solid, no transparency
    ============================================================ */
 .navbar {
   position: fixed;
@@ -211,16 +231,18 @@ button {
   right: 0;
   z-index: 1000;
   height: var(--nav-height);
-  background: transparent;
-  transition: var(--transition);
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
-.navbar.scrolled {
-  background: var(--nav-scrolled-bg);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+[data-theme="light"] .navbar {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
 }
+
 .nav-container {
   display: flex;
   align-items: center;
@@ -229,41 +251,42 @@ button {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
-  gap: 12px;
+  gap: 16px;
 }
+
+/* Logo */
 .nav-logo {
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.5px;
 }
 .logo-k {
-  color: var(--logo-main);
-  transition: color 0.4s;
+  color: var(--nav-logo-color);
+  transition: color 0.35s;
 }
 .logo-s {
   color: var(--primary);
 }
 
+/* Menu */
 .nav-menu {
   display: flex;
   align-items: center;
   gap: 4px;
 }
+
 .nav-link {
   font-size: 0.875rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--nav-link-color);
   padding: 8px 14px;
   border-radius: 6px;
   transition: var(--transition);
   position: relative;
 }
-[data-theme="light"] .navbar.scrolled .nav-link {
-  color: var(--text);
-}
-[data-theme="light"] .navbar.scrolled .nav-link:hover,
-[data-theme="light"] .navbar.scrolled .nav-link.active {
-  color: var(--heading);
+.nav-link:hover,
+.nav-link.active {
+  color: var(--nav-link-hover);
 }
 
 .nav-link::after {
@@ -281,10 +304,13 @@ button {
 .nav-link.active::after {
   width: calc(100% - 28px);
 }
+
+/* CTA link */
 .nav-cta {
   background: var(--primary);
   color: #fff !important;
   padding: 9px 22px;
+  border-radius: 8px;
 }
 .nav-cta::after {
   display: none;
@@ -293,33 +319,40 @@ button {
   background: var(--primary-dark);
 }
 
-/* ---- Theme Toggle ---- */
+/* Right side group */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Theme Toggle */
 .theme-toggle {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
   background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #fff;
-  font-size: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--nav-link-color);
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: var(--transition);
   flex-shrink: 0;
 }
+[data-theme="light"] .theme-toggle {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.12);
+}
 .theme-toggle:hover {
   background: var(--primary);
   border-color: var(--primary);
-  transform: rotate(20deg) scale(1.08);
-}
-[data-theme="light"] .navbar.scrolled .theme-toggle {
-  background: var(--bg-3);
-  border-color: var(--border);
-  color: var(--text);
+  color: #fff;
+  transform: rotate(18deg) scale(1.08);
 }
 
-/* ---- Hamburger ---- */
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -327,17 +360,15 @@ button {
   background: none;
   padding: 8px;
   border-radius: 6px;
+  flex-shrink: 0;
 }
 .hamburger span {
   display: block;
   width: 22px;
   height: 2px;
-  background: #fff;
+  background: var(--hamburger-color);
   border-radius: 2px;
   transition: var(--transition);
-}
-[data-theme="light"] .navbar.scrolled .hamburger span {
-  background: var(--heading);
 }
 .hamburger.open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
@@ -361,6 +392,8 @@ button {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin-top: var(--nav-height);
+  height: calc(100vh - var(--nav-height));
 }
 .hero-slider {
   position: absolute;
@@ -382,7 +415,6 @@ button {
   inset: 0;
   background: var(--hero-overlay);
   z-index: 1;
-  transition: background 0.4s ease;
 }
 .hero-content {
   position: relative;
@@ -404,9 +436,9 @@ button {
 }
 .hero-badge {
   display: inline-block;
-  background: var(--hero-badge-bg);
-  border: 1px solid var(--hero-badge-border);
-  color: var(--hero-badge-color);
+  background: rgba(255, 101, 0, 0.18);
+  border: 1px solid rgba(255, 101, 0, 0.38);
+  color: #ff8533;
   font-size: 0.8rem;
   font-weight: 600;
   padding: 7px 18px;
@@ -416,14 +448,14 @@ button {
 .hero-title {
   font-size: clamp(2.2rem, 5.5vw, 4rem);
   font-weight: 800;
-  color: var(--hero-title-color);
+  color: #ffffff;
   line-height: 1.15;
   margin-bottom: 20px;
   letter-spacing: -1px;
 }
 .hero-sub {
   font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-  color: var(--hero-sub-color);
+  color: rgba(255, 255, 255, 0.78);
   margin-bottom: 36px;
 }
 .hero-buttons {
@@ -446,7 +478,7 @@ button {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.38);
   cursor: pointer;
   transition: var(--transition);
 }
@@ -639,7 +671,7 @@ button {
 .product-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-card);
-  border-color: rgba(255, 101, 0, 0.2);
+  border-color: rgba(255, 101, 0, 0.22);
 }
 .product-img-wrap {
   position: relative;
@@ -716,7 +748,7 @@ button {
 .portfolio-hover {
   position: absolute;
   inset: 0;
-  background: rgba(255, 101, 0, 0.78);
+  background: rgba(255, 101, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -766,7 +798,7 @@ button {
 .blog-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-card);
-  border-color: rgba(255, 101, 0, 0.2);
+  border-color: rgba(255, 101, 0, 0.22);
 }
 .blog-img-wrap {
   position: relative;
@@ -908,7 +940,6 @@ button {
   transform: translateY(-2px);
 }
 
-/* Contact Form */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -929,7 +960,7 @@ button {
 .form-group input,
 .form-group textarea {
   background: var(--input-bg);
-  border: 1px solid var(--border);
+  border: 1px solid var(--input-border);
   border-radius: 8px;
   padding: 13px 16px;
   color: var(--text);
@@ -946,7 +977,7 @@ button {
 }
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: var(--text-muted);
+  color: var(--placeholder);
 }
 .form-success {
   display: none;
@@ -1085,7 +1116,7 @@ button {
 }
 
 /* ============================================================
-   SCROLL REVEAL ANIMATION
+   SCROLL REVEAL KEYFRAME
    ============================================================ */
 @keyframes fadeInUp {
   from {
@@ -1099,7 +1130,7 @@ button {
 }
 
 /* ============================================================
-   RESPONSIVE
+   RESPONSIVE — 1024px
    ============================================================ */
 @media (max-width: 1024px) {
   .services-grid {
@@ -1117,47 +1148,70 @@ button {
   }
 }
 
+/* ============================================================
+   RESPONSIVE — 768px (Tablet / Mobile)
+   ============================================================ */
 @media (max-width: 768px) {
+  :root {
+    --nav-height: 62px;
+  }
   .section {
     padding: 70px 0;
   }
+
+  /* Show hamburger */
   .hamburger {
     display: flex;
   }
+
+  /* Mobile nav drawer */
   .nav-menu {
     position: fixed;
     top: var(--nav-height);
     left: 0;
     right: 0;
-    background: var(--nav-scrolled-bg);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--nav-border);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
     flex-direction: column;
+    align-items: stretch;
     gap: 4px;
-    padding: 16px 16px 24px;
-    border-bottom: 1px solid var(--border);
+    padding: 12px 16px 20px;
     transform: translateY(-110%);
-    transition: transform 0.35s ease;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 999;
   }
   .nav-menu.open {
     transform: translateY(0);
   }
+
   .nav-link {
-    padding: 12px 16px;
-    width: 100%;
+    padding: 13px 16px;
+    color: var(--nav-link-color) !important;
     border-radius: 8px;
-    color: var(--text) !important;
+    font-size: 0.95rem;
   }
   .nav-link::after {
     display: none;
   }
+  .nav-link:hover,
+  .nav-link.active {
+    background: rgba(255, 101, 0, 0.1);
+    color: var(--primary) !important;
+  }
   .nav-cta {
     margin-top: 8px;
-    justify-content: center;
     text-align: center;
+    justify-content: center;
+    color: #fff !important;
+    background: var(--primary);
+  }
+  .nav-cta:hover {
+    background: var(--primary-dark);
     color: #fff !important;
   }
+
+  /* Layout adjustments */
   .about-grid {
     grid-template-columns: 1fr;
     gap: 36px;
@@ -1169,7 +1223,7 @@ button {
     grid-template-columns: 1fr;
   }
   .products-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1182,25 +1236,46 @@ button {
     gap: 40px;
   }
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 28px;
+  }
+
+  .hero-title {
+    letter-spacing: -0.5px;
   }
 }
 
+/* ============================================================
+   RESPONSIVE — 480px (Small Mobile)
+   ============================================================ */
 @media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
   .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
     grid-template-columns: 1fr;
   }
   .about-stats {
     gap: 20px;
   }
+
   .hero-buttons {
     flex-direction: column;
     align-items: center;
   }
   .hero-buttons .btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
     justify-content: center;
+  }
+
+  .contact-grid {
+    gap: 32px;
+  }
+  .section-title {
+    font-size: 1.6rem;
   }
 }
