@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KargouSoft – Smart Software for Modern Businesses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#home" class="nav-logo">
+          <span class="logo-k">Kargou</span><span class="logo-s">Soft</span>
+        </a>
+        <nav class="nav-menu" id="navMenu">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#products" class="nav-link">Products</a>
+          <a href="#portfolio" class="nav-link">Portfolio</a>
+          <a href="#blog" class="nav-link">Blog</a>
+          <a href="#contact" class="nav-link nav-cta">Contact</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <div class="hero-slider" id="heroSlider">
+        <div
+          class="hero-slide active"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=80&quot;);
+          "
+        ></div>
+        <div
+          class="hero-slide"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=1600&q=80&quot;);
+          "
+        ></div>
+        <div
+          class="hero-slide"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=80&quot;);
+          "
+        ></div>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-badge">🚀 Next-Gen Software Company</div>
+        <h1 class="hero-title">
+          Smart Software for<br /><span class="accent">Modern Businesses</span>
+        </h1>
+        <p class="hero-sub">
+          We build powerful software solutions, automate business operations,<br />and
+          develop scalable SaaS products.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary"
+            >Get Started <i class="fas fa-arrow-right"></i
+          ></a>
+          <a href="#products" class="btn btn-outline"
+            >View Products <i class="fas fa-th-large"></i
+          ></a>
+        </div>
+      </div>
+      <div class="hero-dots" id="heroDots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-visual">
+            <div class="about-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+                alt="KargouSoft Team"
+              />
+              <div class="about-badge-float">
+                <i class="fas fa-check-circle"></i>
+                <span>5+ Years Experience</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-content">
+            <span class="section-label">Who We Are</span>
+            <h2 class="section-title">
+              About <span class="accent">KargouSoft</span>
+            </h2>
+            <p class="about-desc">
+              KargouSoft is a modern software company focused on building
+              innovative software solutions, business automation systems, and
+              scalable SaaS platforms for startups and enterprises.
+            </p>
+            <ul class="about-highlights">
+              <li>
+                <i class="fas fa-check-circle"></i> Custom Software Development
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Business Process Automation
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> SaaS Platform Development
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Modern Web Applications
+              </li>
+            </ul>
+            <div class="about-stats">
+              <div class="stat">
+                <span class="stat-num">50+</span
+                ><span class="stat-label">Projects</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">30+</span
+                ><span class="stat-label">Clients</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">5+</span
+                ><span class="stat-label">Years</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">What We Do</span>
+          <h2 class="section-title">
+            Our <span class="accent">Services</span>
+          </h2>
+          <p class="section-sub">
+            End-to-end software development and automation services tailored for
+            your business growth.
+          </p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-code"></i></div>
+            <h3>Custom Software Development</h3>
+            <p>
+              Tailored software built from the ground up to match your unique
+              business requirements and workflows.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-globe"></i></div>
+            <h3>Web Application Development</h3>
+            <p>
+              High-performance, scalable web apps using modern frameworks and
+              best development practices.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-robot"></i></div>
+            <h3>Business Automation</h3>
+            <p>
+              Streamline operations with intelligent automation tools that
+              reduce manual work and errors.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-cloud"></i></div>
+            <h3>SaaS Development</h3>
+            <p>
+              Build scalable, multi-tenant SaaS platforms with subscription
+              management and cloud infrastructure.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+            <h3>Cloud Integration</h3>
+            <p>
+              Seamlessly integrate your systems with cloud services like AWS,
+              Azure, and Google Cloud.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-tools"></i></div>
+            <h3>Software Maintenance</h3>
+            <p>
+              Reliable ongoing support, updates, and performance monitoring for
+              your existing software.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRODUCTS ===== -->
+    <section class="products section" id="products">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">What We've Built</span>
+          <h2 class="section-title">
+            Our <span class="accent">Products</span>
+          </h2>
+          <p class="section-sub">
+            Ready-to-deploy software products crafted for industry-specific
+            needs.
+          </p>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1585435557343-3b092031a831?w=600&q=80"
+                alt="Pharmacy Management"
+              />
+              <span class="product-tag">Healthcare</span>
+            </div>
+            <div class="product-body">
+              <h3>Pharmacy Management Software</h3>
+              <p>
+                Complete pharmacy solution with inventory, billing,
+                prescriptions, and reporting.
+              </p>
+              <a href="#" class="btn btn-sm"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600&q=80"
+                alt="Hospital Management"
+              />
+              <span class="product-tag">Healthcare</span>
+            </div>
+            <div class="product-body">
+              <h3>Hospital Management Software</h3>
+              <p>
+                End-to-end hospital operations: patients, doctors, scheduling,
+                billing & reports.
+              </p>
+              <a href="#" class="btn btn-sm"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80"
+                alt="POS Software"
+              />
+              <span class="product-tag">Retail</span>
+            </div>
+            <div class="product-body">
+              <h3>POS Software</h3>
+              <p>
+                Fast and reliable point-of-sale system for retail and restaurant
+                businesses.
+              </p>
+              <a href="#" class="btn btn-sm"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80"
+                alt="School Management"
+              />
+              <span class="product-tag">Education</span>
+            </div>
+            <div class="product-body">
+              <h3>School Management System</h3>
+              <p>
+                Complete school ERP: admissions, attendance, results, fees, and
+                communication.
+              </p>
+              <a href="#" class="btn btn-sm"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PORTFOLIO ===== -->
+    <section class="portfolio section" id="portfolio">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Our Work</span>
+          <h2 class="section-title">
+            Our <span class="accent">Portfolio</span>
+          </h2>
+          <p class="section-sub">
+            A glimpse of the projects we've delivered with excellence.
+          </p>
+        </div>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <div class="portfolio-thumb">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80"
+                alt="Analytics Dashboard"
+              />
+              <div class="portfolio-hover">
+                <i class="fas fa-external-link-alt"></i>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h4>Analytics Dashboard</h4>
+              <span>React · Node.js · PostgreSQL</span>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-thumb">
+              <img
+                src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80"
+                alt="E-Commerce Platform"
+              />
+              <div class="portfolio-hover">
+                <i class="fas fa-external-link-alt"></i>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h4>E-Commerce Platform</h4>
+              <span>Next.js · Django · MySQL</span>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-thumb">
+              <img
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80"
+                alt="CRM System"
+              />
+              <div class="portfolio-hover">
+                <i class="fas fa-external-link-alt"></i>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h4>CRM System</h4>
+              <span>Python · FastAPI · MongoDB</span>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-thumb">
+              <img
+                src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80"
+                alt="HR Management"
+              />
+              <div class="portfolio-hover">
+                <i class="fas fa-external-link-alt"></i>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h4>HR Management System</h4>
+              <span>Vue.js · Laravel · MySQL</span>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-thumb">
+              <img
+                src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=600&q=80"
+                alt="Inventory System"
+              />
+              <div class="portfolio-hover">
+                <i class="fas fa-external-link-alt"></i>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h4>Inventory System</h4>
+              <span>React · Express · SQLite</span>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-thumb">
+              <img
+                src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80"
+                alt="Mobile App"
+              />
+              <div class="portfolio-hover">
+                <i class="fas fa-external-link-alt"></i>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h4>Mobile Banking App</h4>
+              <span>Flutter · Firebase · REST API</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BLOG ===== -->
+    <section class="blog section" id="blog">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Insights</span>
+          <h2 class="section-title">Latest <span class="accent">Blog</span></h2>
+          <p class="section-sub">
+            Stay updated with our articles on software, automation, and digital
+            transformation.
+          </p>
+        </div>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="blog-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80"
+                alt="Blog 1"
+              />
+              <span class="blog-cat">Automation</span>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <i class="far fa-calendar-alt"></i> March 10, 2025 ·
+                <i class="far fa-clock"></i> 5 min read
+              </div>
+              <h3>Why Businesses Need Automation in 2025</h3>
+              <p>
+                Discover how business automation reduces costs, eliminates
+                repetitive tasks, and drives growth at scale.
+              </p>
+              <a href="#" class="read-more"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80"
+                alt="Blog 2"
+              />
+              <span class="blog-cat">SaaS</span>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <i class="far fa-calendar-alt"></i> February 22, 2025 ·
+                <i class="far fa-clock"></i> 6 min read
+              </div>
+              <h3>Top Benefits of SaaS Platforms for Businesses</h3>
+              <p>
+                SaaS platforms offer scalability, cost-efficiency, and fast
+                deployment — here's why you should consider them.
+              </p>
+              <a href="#" class="read-more"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="blog-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80"
+                alt="Blog 3"
+              />
+              <span class="blog-cat">Digital</span>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <i class="far fa-calendar-alt"></i> January 15, 2025 ·
+                <i class="far fa-clock"></i> 7 min read
+              </div>
+              <h3>Digital Transformation for SMEs: A Practical Guide</h3>
+              <p>
+                Small businesses can compete with giants by embracing digital
+                transformation — here's how to start.
+              </p>
+              <a href="#" class="read-more"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Get In Touch</span>
+          <h2 class="section-title">Contact <span class="accent">Us</span></h2>
+          <p class="section-sub">
+            Have a project in mind? We'd love to hear about it.
+          </p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Let's Build Together</h3>
+            <p>
+              Reach out for project discussions, inquiries, or collaboration
+              opportunities.
+            </p>
+            <ul class="contact-details">
+              <li>
+                <i class="fas fa-envelope"></i
+                ><a href="mailto:info@kargousoft.com">info@kargousoft.com</a>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i
+                ><a href="tel:+880000000000">+880 000 000 000</a>
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i><span>Bangladesh</span>
+              </li>
+            </ul>
+            <div class="contact-socials">
+              <a href="https://www.facebook.com/kargousoft" target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/kargousoft" target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/kargousoft"
+                target="_blank"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="https://www.github.com/kargousoft" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="https://www.youtube.com/@kargousoft" target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="John Doe"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="john@example.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Tell us about your project..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <i class="fas fa-check-circle"></i> Message sent! We'll reply
+              soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#home" class="nav-logo">
+              <span class="logo-k">Kargou</span><span class="logo-s">Soft</span>
+            </a>
+            <p>Software Solutions | Business Automation | SaaS Development</p>
+            <div class="footer-socials">
+              <a href="https://www.facebook.com/kargousoft" target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/kargousoft" target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.threads.com/kargousoft" target="_blank"
+                ><i class="fab fa-threads"></i
+              ></a>
+              <a href="https://www.github.com/kargousoft" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="https://www.youtube.com/@kargousoft" target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="https://www.tiktok.com/@kargousoft" target="_blank"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a href="https://www.x.com/kargousoft" target="_blank"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/kargousoft"
+                target="_blank"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#services">Custom Software</a></li>
+              <li><a href="#services">Web Applications</a></li>
+              <li><a href="#services">Business Automation</a></li>
+              <li><a href="#services">SaaS Development</a></li>
+              <li><a href="#services">Cloud Integration</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li><i class="fas fa-envelope"></i> info@kargousoft.com</li>
+              <li><i class="fas fa-phone"></i> +880 000 000 000</li>
+              <li><i class="fas fa-map-marker-alt"></i> Bangladesh</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="year"></span> KargouSoft. All Rights Reserved. Made
+            with <i class="fas fa-heart" style="color: #ff6500"></i> in
+            Bangladesh.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
