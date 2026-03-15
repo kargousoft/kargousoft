@@ -25,7 +25,7 @@ function applyIcon(theme) {
     theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode";
 }
 
-/* ---- NAVBAR scroll shadow + active link ---- */
+/* ---- NAVBAR ---- */
 const navbar = document.getElementById("navbar");
 const navLinks = document.querySelectorAll(".nav-link");
 const backToTop = document.getElementById("backToTop");
@@ -62,9 +62,7 @@ if (hamburger && navMenu) {
     hamburger.classList.toggle("open");
     navMenu.classList.toggle("open");
   });
-
   navLinks.forEach((link) => link.addEventListener("click", closeMenu));
-
   document.addEventListener("click", (e) => {
     if (navbar && !navbar.contains(e.target)) closeMenu();
   });
@@ -156,7 +154,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 /* ---- SCROLL REVEAL ---- */
 const revealEls = document.querySelectorAll(
-  ".service-card,.product-card,.portfolio-item,.blog-card,.about-grid,.contact-grid",
+  ".service-card, .product-card, .portfolio-item, .blog-card, .about-grid, .contact-info-wrap, .contact-form-wrap",
 );
 
 if (revealEls.length > 0) {
