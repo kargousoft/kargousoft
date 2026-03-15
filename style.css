@@ -1,10 +1,8 @@
 /* ============================================================
    KargouSoft — style.css
    Default: Light | Toggle: Dark
-   Desktop sections = 100vh
    ============================================================ */
 
-/* ---- LIGHT MODE (Default) ---- */
 :root {
   --primary: #ff6500;
   --primary-dark: #cc5000;
@@ -38,7 +36,6 @@
     rgba(10, 10, 10, 0.5) 55%,
     rgba(255, 101, 0, 0.16) 100%
   );
-
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
 
@@ -49,7 +46,6 @@
   --nav-height: 68px;
 }
 
-/* ---- DARK MODE ---- */
 [data-theme="dark"] {
   --nav-bg: #404041;
   --nav-border: rgba(255, 255, 255, 0.08);
@@ -79,14 +75,10 @@
     rgba(17, 18, 20, 0.55) 55%,
     rgba(255, 101, 0, 0.14) 100%
   );
-
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.28);
 }
 
-/* ============================================================
-   RESET
-   ============================================================ */
 *,
 *::before,
 *::after {
@@ -127,15 +119,11 @@ button {
   outline: none;
 }
 
-/* ============================================================
-   UTILITY
-   ============================================================ */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
-
 .full-screen {
   min-height: 100vh;
   display: flex;
@@ -157,7 +145,6 @@ button {
   text-align: center;
   margin-bottom: 44px;
 }
-
 .section-label {
   display: inline-block;
   background: rgba(255, 101, 0, 0.12);
@@ -187,9 +174,6 @@ button {
   color: var(--primary);
 }
 
-/* ============================================================
-   BUTTONS
-   ============================================================ */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -230,9 +214,7 @@ button {
   justify-content: center;
 }
 
-/* ============================================================
-   NAVBAR
-   ============================================================ */
+/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
@@ -269,7 +251,6 @@ button {
 .logo-s {
   color: var(--primary);
 }
-
 .nav-menu {
   display: flex;
   align-items: center;
@@ -315,13 +296,11 @@ button {
 .nav-cta:hover {
   background: var(--primary-dark);
 }
-
 .nav-right {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-
 .theme-toggle {
   width: 36px;
   height: 36px;
@@ -346,7 +325,6 @@ button {
   color: #fff;
   transform: rotate(18deg) scale(1.08);
 }
-
 .hamburger {
   display: none;
   flex-direction: column;
@@ -375,9 +353,7 @@ button {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* ============================================================
-   HERO
-   ============================================================ */
+/* HERO */
 .hero {
   position: relative;
   height: 100vh;
@@ -480,9 +456,7 @@ button {
   transform: scale(1.3);
 }
 
-/* ============================================================
-   ABOUT
-   ============================================================ */
+/* ABOUT */
 .about {
   background: var(--bg-2);
 }
@@ -552,6 +526,7 @@ button {
   gap: 26px;
   padding-top: 20px;
   border-top: 1px solid var(--border);
+  margin-bottom: 0;
 }
 .stat {
   display: flex;
@@ -570,10 +545,11 @@ button {
   letter-spacing: 1px;
   margin-top: 4px;
 }
+.about-team-btn {
+  margin-top: 28px;
+}
 
-/* ============================================================
-   SERVICES
-   ============================================================ */
+/* SERVICES */
 .services {
   background: var(--bg);
 }
@@ -645,9 +621,7 @@ button {
   line-height: 1.65;
 }
 
-/* ============================================================
-   PRODUCTS
-   ============================================================ */
+/* PRODUCTS */
 .products {
   background: var(--bg-2);
 }
@@ -708,9 +682,7 @@ button {
   line-height: 1.55;
 }
 
-/* ============================================================
-   PORTFOLIO
-   ============================================================ */
+/* PORTFOLIO */
 .portfolio {
   background: var(--bg);
 }
@@ -774,274 +746,9 @@ button {
   font-weight: 500;
 }
 
-/* ============================================================
-   TEAM
-   ============================================================ */
-.team {
-  background: var(--bg-2);
-}
-
-.team-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 28px;
-  width: 100%;
-  margin-bottom: 40px;
-}
-
-/* Member Card */
-.member-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  width: 320px;
-  transition: var(--transition);
-  box-shadow: var(--shadow-card);
-}
-.member-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
-  border-color: rgba(255, 101, 0, 0.2);
-}
-
-/* Member top — always visible */
-.member-top {
-  padding: 32px 28px 20px;
-  text-align: center;
-}
-.member-avatar-wrap {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 16px;
-}
-.member-avatar-wrap img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 3px solid var(--primary);
-  object-fit: cover;
-  box-shadow: 0 4px 20px rgba(255, 101, 0, 0.25);
-}
-.member-status {
-  position: absolute;
-  bottom: 4px;
-  right: 0px;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  color: #22c55e;
-  font-size: 0.65rem;
-  font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  white-space: nowrap;
-}
-.member-status i {
-  font-size: 0.5rem;
-}
-
-.member-name {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--heading);
-  margin-bottom: 4px;
-}
-.member-role {
-  display: inline-block;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--primary);
-  background: rgba(255, 101, 0, 0.1);
-  padding: 3px 12px;
-  border-radius: 50px;
-  margin-bottom: 14px;
-}
-.member-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  justify-content: center;
-}
-.member-tags span {
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  background: var(--bg-3);
-  border: 1px solid var(--border);
-  padding: 3px 10px;
-  border-radius: 50px;
-}
-
-/* View Details Button */
-.btn-view-details {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  padding: 13px 20px;
-  background: transparent;
-  border-top: 1px solid var(--border);
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
-  color: var(--primary);
-  font-size: 0.85rem;
-  font-weight: 600;
-  font-family: var(--font);
-  cursor: pointer;
-  transition: var(--transition);
-}
-.btn-view-details:hover {
-  background: rgba(255, 101, 0, 0.07);
-}
-.btn-icon {
-  transition: transform 0.35s ease;
-  font-size: 0.78rem;
-}
-.btn-view-details.open .btn-icon {
-  transform: rotate(180deg);
-}
-.btn-view-details.open {
-  color: var(--primary-dark);
-}
-
-/* Member Details — collapsible */
-.member-details {
-  max-height: 0;
-  overflow: hidden;
-  transition:
-    max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.35s ease;
-  opacity: 0;
-}
-.member-details.open {
-  max-height: 500px;
-  opacity: 1;
-}
-.member-details-inner {
-  padding: 20px 28px 26px;
-  border-top: 1px solid var(--border);
-}
-.member-bio {
-  font-size: 0.84rem;
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 18px;
-}
-.member-info-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 18px;
-}
-.member-info-list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-.member-info-list li i {
-  width: 30px;
-  height: 30px;
-  background: rgba(255, 101, 0, 0.1);
-  color: var(--primary);
-  border-radius: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  flex-shrink: 0;
-}
-.member-info-list li a {
-  color: var(--text-muted);
-  transition: var(--transition);
-  word-break: break-all;
-}
-.member-info-list li a:hover {
-  color: var(--primary);
-}
-.member-socials {
-  display: flex;
-  gap: 8px;
-}
-.member-socials a {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background: var(--bg-3);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  transition: var(--transition);
-}
-.member-socials a:hover {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-/* Join CTA */
-.team-join {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.team-join-card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 101, 0, 0.08) 0%,
-    rgba(255, 101, 0, 0.04) 100%
-  );
-  border: 1px solid rgba(255, 101, 0, 0.18);
-  border-radius: var(--radius-lg);
-  padding: 36px 48px;
-  text-align: center;
-  max-width: 500px;
-  width: 100%;
-}
-.team-join-icon {
-  width: 56px;
-  height: 56px;
-  background: rgba(255, 101, 0, 0.12);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 16px;
-}
-.team-join-icon i {
-  font-size: 1.3rem;
-  color: var(--primary);
-}
-.team-join-card h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--heading);
-  margin-bottom: 8px;
-}
-.team-join-card p {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-/* ============================================================
-   BLOG
-   ============================================================ */
+/* BLOG */
 .blog {
-  background: var(--bg);
+  background: var(--bg-2);
 }
 .blog-grid {
   display: grid;
@@ -1121,11 +828,9 @@ button {
   gap: 10px;
 }
 
-/* ============================================================
-   CONTACT
-   ============================================================ */
+/* CONTACT */
 .contact {
-  background: var(--bg-2);
+  background: var(--bg);
 }
 .contact-grid {
   display: grid;
@@ -1200,7 +905,6 @@ button {
   color: #fff;
   transform: translateY(-2px);
 }
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -1259,9 +963,7 @@ button {
   display: flex;
 }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
+/* FOOTER */
 .footer {
   background: var(--bg-3);
   border-top: 1px solid var(--border);
@@ -1343,9 +1045,7 @@ button {
   color: var(--text-muted);
 }
 
-/* ============================================================
-   BACK TO TOP
-   ============================================================ */
+/* BACK TO TOP */
 .back-to-top {
   position: fixed;
   bottom: 24px;
@@ -1376,9 +1076,6 @@ button {
   transform: translateY(-2px);
 }
 
-/* ============================================================
-   SCROLL REVEAL
-   ============================================================ */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -1390,18 +1087,14 @@ button {
   }
 }
 
-/* ============================================================
-   RESPONSIVE — 1200px
-   ============================================================ */
+/* RESPONSIVE 1200px */
 @media (max-width: 1200px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ============================================================
-   RESPONSIVE — 1024px
-   ============================================================ */
+/* RESPONSIVE 1024px */
 @media (max-width: 1024px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1423,9 +1116,7 @@ button {
   }
 }
 
-/* ============================================================
-   RESPONSIVE — 768px
-   ============================================================ */
+/* RESPONSIVE 768px */
 @media (max-width: 768px) {
   :root {
     --nav-height: 60px;
@@ -1444,7 +1135,6 @@ button {
     padding-top: calc(var(--nav-height) + 16px);
     padding-bottom: 56px;
   }
-
   .hamburger {
     display: flex;
   }
@@ -1490,7 +1180,6 @@ button {
   .nav-cta:hover {
     color: #fff !important;
   }
-
   .about-grid {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -1521,19 +1210,9 @@ button {
   .section-header {
     margin-bottom: 32px;
   }
-
-  .member-card {
-    width: 100%;
-    max-width: 360px;
-  }
-  .team-join-card {
-    padding: 28px 24px;
-  }
 }
 
-/* ============================================================
-   RESPONSIVE — 480px
-   ============================================================ */
+/* RESPONSIVE 480px */
 @media (max-width: 480px) {
   .products-grid {
     grid-template-columns: 1fr;
