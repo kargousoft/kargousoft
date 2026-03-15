@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Team – KargouSoft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="team.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-k">Kargou</span><span class="logo-s">Soft</span>
+        </a>
+        <nav class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html#about" class="nav-link">About</a>
+          <a href="index.html#services" class="nav-link">Services</a>
+          <a href="index.html#products" class="nav-link">Products</a>
+          <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+          <a href="team.html" class="nav-link active">Team</a>
+          <a href="index.html#blog" class="nav-link">Blog</a>
+          <a href="index.html#contact" class="nav-link nav-cta">Contact</a>
+        </nav>
+        <div class="nav-right">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle Theme"
+          >
+            <i class="fas fa-moon" id="themeIcon"></i>
+          </button>
+          <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero-content">
+        <div class="breadcrumb">
+          <a href="index.html"><i class="fas fa-home"></i> Home</a>
+          <i class="fas fa-chevron-right"></i>
+          <span>Our Team</span>
+        </div>
+        <h1>Meet Our <span class="accent">Team</span></h1>
+        <p>
+          The passionate minds building the future of software at KargouSoft.
+        </p>
+      </div>
+    </section>
+
+    <!-- TEAM MAIN -->
+    <main class="team-main">
+      <div class="container">
+        <div class="team-grid">
+          <!-- Employee Card -->
+          <div
+            class="emp-card"
+            onclick="window.location = 'employee.html?id=shanto'"
+          >
+            <div class="emp-card-img">
+              <img
+                src="https://avatars.githubusercontent.com/u/126598101?v=4"
+                alt="Shanto Karmoker"
+              />
+              <span class="emp-active-badge"
+                ><i class="fas fa-circle"></i> Active</span
+              >
+            </div>
+            <div class="emp-card-body">
+              <div class="emp-id">KS-001</div>
+              <h3 class="emp-name">Shanto Karmoker</h3>
+              <span class="emp-role">Software Developer</span>
+            </div>
+            <div class="emp-card-footer">
+              <a
+                href="employee.html?id=shanto"
+                class="emp-details-btn"
+                onclick="event.stopPropagation()"
+              >
+                <i class="fas fa-user"></i> View Details
+              </a>
+            </div>
+          </div>
+
+          <!-- Hiring Card -->
+          <div class="emp-card emp-hire-card">
+            <div class="emp-hire-icon"><i class="fas fa-user-plus"></i></div>
+            <h3>We Are Hiring!</h3>
+            <p>
+              Passionate about software? Join our growing team and build
+              something amazing together.
+            </p>
+            <a href="index.html#contact" class="btn btn-primary btn-sm"
+              >Apply Now <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo">
+              <span class="logo-k">Kargou</span><span class="logo-s">Soft</span>
+            </a>
+            <p>Software Solutions | Business Automation | SaaS Development</p>
+            <div class="footer-socials">
+              <a href="https://www.facebook.com/kargousoft" target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/kargousoft" target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.threads.com/kargousoft" target="_blank"
+                ><i class="fab fa-threads"></i
+              ></a>
+              <a href="https://github.com/kargousoft" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="https://www.youtube.com/@kargousoft" target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="https://www.tiktok.com/@kargousoft" target="_blank"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a href="https://www.x.com/kargousoft" target="_blank"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/kargousoft"
+                target="_blank"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">About</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="index.html#products">Products</a></li>
+              <li><a href="team.html">Team</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="index.html#services">Custom Software</a></li>
+              <li><a href="index.html#services">Web Applications</a></li>
+              <li><a href="index.html#services">Business Automation</a></li>
+              <li><a href="index.html#services">SaaS Development</a></li>
+              <li><a href="index.html#services">Cloud Integration</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li><i class="fas fa-envelope"></i> info@kargousoft.com</li>
+              <li><i class="fas fa-phone"></i> +880 000 000 000</li>
+              <li><i class="fas fa-map-marker-alt"></i> Bangladesh</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="year"></span> KargouSoft. All Rights Reserved. Made
+            with <i class="fas fa-heart" style="color: #ff6500"></i> in
+            Bangladesh.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+    <script src="script.js"></script>
+  </body>
+</html>
