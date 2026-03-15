@@ -3,9 +3,7 @@
    ============================================================ */
 "use strict";
 
-/* ============================================================
-   THEME TOGGLE — default light
-   ============================================================ */
+/* ---- THEME ---- */
 const html = document.documentElement;
 const themeToggle = document.getElementById("themeToggle");
 const themeIcon = document.getElementById("themeIcon");
@@ -27,9 +25,7 @@ function applyIcon(theme) {
     theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode";
 }
 
-/* ============================================================
-   NAVBAR — scroll shadow + active link
-   ============================================================ */
+/* ---- NAVBAR scroll shadow + active link ---- */
 const navbar = document.getElementById("navbar");
 const navLinks = document.querySelectorAll(".nav-link");
 const backToTop = document.getElementById("backToTop");
@@ -38,31 +34,25 @@ window.addEventListener("scroll", () => {
   if (navbar) {
     navbar.style.boxShadow =
       window.scrollY > 10
-        ? "0 4px 24px rgba(0,0,0,0.14)"
-        : "0 2px 16px rgba(0,0,0,0.08)";
+        ? "0 4px 20px rgba(0,0,0,0.13)"
+        : "0 2px 12px rgba(0,0,0,0.08)";
   }
   if (backToTop) backToTop.classList.toggle("show", window.scrollY > 400);
 
-  // Active link only on index page
   const sections = document.querySelectorAll("section[id]");
-  if (sections.length > 0) {
-    let current = "";
-    sections.forEach((sec) => {
-      if (window.scrollY >= sec.offsetTop - 100)
-        current = sec.getAttribute("id");
-    });
-    navLinks.forEach((link) => {
-      const href = link.getAttribute("href");
-      if (href && href.startsWith("#")) {
-        link.classList.toggle("active", href === `#${current}`);
-      }
-    });
-  }
+  let current = "";
+  sections.forEach((sec) => {
+    if (window.scrollY >= sec.offsetTop - 80) current = sec.getAttribute("id");
+  });
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (href && href.startsWith("#")) {
+      link.classList.toggle("active", href === `#${current}`);
+    }
+  });
 });
 
-/* ============================================================
-   HAMBURGER
-   ============================================================ */
+/* ---- HAMBURGER ---- */
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
 
@@ -72,7 +62,9 @@ if (hamburger && navMenu) {
     hamburger.classList.toggle("open");
     navMenu.classList.toggle("open");
   });
+
   navLinks.forEach((link) => link.addEventListener("click", closeMenu));
+
   document.addEventListener("click", (e) => {
     if (navbar && !navbar.contains(e.target)) closeMenu();
   });
@@ -83,43 +75,39 @@ function closeMenu() {
   if (navMenu) navMenu.classList.remove("open");
 }
 
-/* ============================================================
-   HERO CAROUSEL (index.html only)
-   ============================================================ */
+/* ---- HERO CAROUSEL ---- */
 const slides = document.querySelectorAll(".hero-slide");
 const dots = document.querySelectorAll(".dot");
 
 if (slides.length > 0) {
-  let current = 0;
-  let autoTimer = null;
+  let cur = 0,
+    timer = null;
 
-  function goTo(index) {
-    slides[current].classList.remove("active");
-    dots[current].classList.remove("active");
-    current = (index + slides.length) % slides.length;
-    slides[current].classList.add("active");
-    dots[current].classList.add("active");
+  function goTo(i) {
+    slides[cur].classList.remove("active");
+    dots[cur].classList.remove("active");
+    cur = (i + slides.length) % slides.length;
+    slides[cur].classList.add("active");
+    dots[cur].classList.add("active");
   }
-  function startCarousel() {
-    autoTimer = setInterval(() => goTo(current + 1), 4000);
+  function start() {
+    timer = setInterval(() => goTo(cur + 1), 4000);
   }
-  function resetCarousel() {
-    clearInterval(autoTimer);
-    startCarousel();
+  function reset() {
+    clearInterval(timer);
+    start();
   }
 
-  dots.forEach((dot) => {
-    dot.addEventListener("click", () => {
-      goTo(parseInt(dot.dataset.index));
-      resetCarousel();
-    });
-  });
-  startCarousel();
+  dots.forEach((d) =>
+    d.addEventListener("click", () => {
+      goTo(parseInt(d.dataset.index));
+      reset();
+    }),
+  );
+  start();
 }
 
-/* ============================================================
-   CONTACT FORM (index.html only)
-   ============================================================ */
+/* ---- CONTACT FORM ---- */
 const contactForm = document.getElementById("contactForm");
 const formSuccess = document.getElementById("formSuccess");
 
@@ -155,45 +143,38 @@ if (contactForm) {
   });
 }
 
-/* ============================================================
-   BACK TO TOP
-   ============================================================ */
+/* ---- BACK TO TOP ---- */
 if (backToTop) {
   backToTop.addEventListener("click", () =>
     window.scrollTo({ top: 0, behavior: "smooth" }),
   );
 }
 
-/* ============================================================
-   FOOTER YEAR
-   ============================================================ */
+/* ---- FOOTER YEAR ---- */
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-/* ============================================================
-   SCROLL REVEAL
-   ============================================================ */
+/* ---- SCROLL REVEAL ---- */
 const revealEls = document.querySelectorAll(
-  ".service-card, .product-card, .portfolio-item, .blog-card, .about-grid, .contact-grid, .emp-card, .emp-profile-section, .emp-profile-header, .emp-profile-left",
+  ".service-card,.product-card,.portfolio-item,.blog-card,.about-grid,.contact-grid",
 );
 
 if (revealEls.length > 0) {
-  const observer = new IntersectionObserver(
+  const obs = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const d = entry.target.dataset.delay || "0s";
-          entry.target.style.animation = `fadeInUp 0.55s ease ${d} forwards`;
-          observer.unobserve(entry.target);
+          entry.target.style.animation = `fadeInUp 0.5s ease ${entry.target.dataset.delay || "0s"} forwards`;
+          obs.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.08 },
+    { threshold: 0.07 },
   );
 
   revealEls.forEach((el, i) => {
     el.style.opacity = "0";
-    el.dataset.delay = `${(i % 3) * 0.1}s`;
-    observer.observe(el);
+    el.dataset.delay = `${(i % 3) * 0.08}s`;
+    obs.observe(el);
   });
 }
