@@ -107,12 +107,6 @@ a {
   text-decoration: none;
   color: inherit;
 }
-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 ul {
   list-style: none;
 }
@@ -224,10 +218,6 @@ button {
   color: var(--primary);
   transform: translateY(-2px);
 }
-.btn-sm {
-  padding: 6px 14px;
-  font-size: 0.72rem;
-}
 .btn-full {
   width: 100%;
   justify-content: center;
@@ -274,7 +264,6 @@ button {
 .logo-s {
   color: var(--primary);
 }
-
 .nav-menu {
   display: flex;
   align-items: center;
@@ -324,15 +313,12 @@ button {
 .nav-cta:hover {
   background: var(--primary-dark);
 }
-
 .nav-right {
   display: flex;
   align-items: center;
   gap: 7px;
   flex-shrink: 0;
 }
-
-/* Theme toggle — NO rotation, NO scale on hover */
 .theme-toggle {
   width: 33px;
   height: 33px;
@@ -359,7 +345,6 @@ button {
   border-color: var(--primary);
   color: #fff;
 }
-
 .hamburger {
   display: none;
   flex-direction: column;
@@ -514,15 +499,16 @@ button {
   overflow: hidden;
   box-shadow: var(--shadow);
   max-height: calc(100vh - var(--nav-height) - 60px);
-  aspect-ratio: 4/3;
 }
-.about-img-wrap img {
+.about-photo {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
   object-fit: cover;
   transition: transform 0.6s ease;
 }
-.about-img-wrap:hover img {
+.about-img-wrap:hover .about-photo {
   transform: scale(1.04);
 }
 .about-img-wrap::before {
@@ -555,8 +541,6 @@ button {
   flex-direction: column;
   justify-content: center;
 }
-
-/* About label & title — left on desktop, handled in responsive for mobile */
 .about-label {
   text-align: left;
   margin-bottom: 8px;
@@ -566,7 +550,6 @@ button {
   font-size: clamp(1.4rem, 2.2vw, 2.1rem);
   margin-bottom: 12px;
 }
-
 .about-desc {
   color: var(--text-muted);
   font-size: 0.82rem;
@@ -603,7 +586,6 @@ button {
 }
 .about-stats {
   display: flex;
-  gap: 0;
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
@@ -749,16 +731,22 @@ button {
   box-shadow: var(--shadow-card);
   border-color: rgba(255, 101, 0, 0.22);
 }
-.product-img-wrap {
+.product-img-box {
   position: relative;
-  aspect-ratio: 16/10;
+  width: 100%;
   overflow: hidden;
   flex-shrink: 0;
+  line-height: 0;
 }
-.product-img-wrap img {
+.product-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/10;
+  object-fit: cover;
   transition: transform 0.55s ease;
 }
-.product-card:hover .product-img-wrap img {
+.product-card:hover .product-photo {
   transform: scale(1.07);
 }
 .product-tag {
@@ -791,7 +779,10 @@ button {
   line-height: 1.55;
   flex: 1;
 }
-.product-body .btn-sm {
+.btn-learn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   margin-top: 4px;
   align-self: flex-start;
   background: transparent;
@@ -799,8 +790,11 @@ button {
   border: 1px solid rgba(255, 101, 0, 0.35);
   padding: 5px 13px;
   font-size: 0.7rem;
+  border-radius: 7px;
+  font-weight: 600;
+  transition: var(--transition);
 }
-.product-body .btn-sm:hover {
+.btn-learn:hover {
   background: var(--primary);
   color: #fff;
   border-color: var(--primary);
@@ -808,150 +802,10 @@ button {
 }
 
 /* ============================================================
-   PORTFOLIO — clean, working design
-   ============================================================ */
-.portfolio-sec {
-  background: var(--bg);
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  width: 100%;
-}
-
-.portfolio-item {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-  cursor: pointer;
-}
-.portfolio-item:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-card);
-  border-color: rgba(255, 101, 0, 0.25);
-}
-
-/* Image area */
-.portfolio-thumb {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16/10;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.portfolio-thumb > img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.55s ease;
-}
-.portfolio-item:hover .portfolio-thumb > img {
-  transform: scale(1.07);
-}
-
-/* Orange overlay on hover */
-.portfolio-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 101, 0, 0.9),
-    rgba(204, 80, 0, 0.84)
-  );
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 2;
-}
-.portfolio-item:hover .portfolio-overlay {
-  opacity: 1;
-}
-.portfolio-overlay > i {
-  font-size: 1.5rem;
-  color: #ffffff;
-}
-.portfolio-overlay > span {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-/* Meta row below image */
-.portfolio-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 10px 14px 12px;
-  flex-shrink: 0;
-}
-.portfolio-meta-left {
-  flex: 1;
-  min-width: 0;
-}
-.portfolio-meta-left > h4 {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--heading);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 2px;
-  line-height: 1.3;
-}
-.portfolio-meta-left > span {
-  font-size: 0.64rem;
-  color: var(--text-muted);
-  font-weight: 500;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: block;
-}
-.portfolio-meta-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 7px;
-  background: rgba(255, 101, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background 0.25s ease;
-}
-.portfolio-meta-icon > i {
-  font-size: 0.65rem;
-  color: var(--primary);
-  transition: color 0.25s ease;
-}
-.portfolio-item:hover .portfolio-meta-icon {
-  background: var(--primary);
-}
-.portfolio-item:hover .portfolio-meta-icon > i {
-  color: #ffffff;
-}
-
-/* ============================================================
    BLOG
    ============================================================ */
 .blog-sec {
-  background: var(--bg-2);
+  background: var(--bg);
 }
 .blog-grid {
   display: grid;
@@ -973,16 +827,22 @@ button {
   box-shadow: var(--shadow-card);
   border-color: rgba(255, 101, 0, 0.2);
 }
-.blog-img-wrap {
+.blog-img-box {
   position: relative;
-  aspect-ratio: 16/9;
+  width: 100%;
   overflow: hidden;
   flex-shrink: 0;
+  line-height: 0;
 }
-.blog-img-wrap img {
+.blog-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
   transition: transform 0.55s ease;
 }
-.blog-card:hover .blog-img-wrap img {
+.blog-card:hover .blog-photo {
   transform: scale(1.07);
 }
 .blog-cat {
@@ -996,7 +856,7 @@ button {
   padding: 3px 10px;
   border-radius: 50px;
 }
-.blog-read-time {
+.blog-time {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -1063,7 +923,7 @@ button {
    CONTACT
    ============================================================ */
 .contact-sec {
-  background: var(--bg);
+  background: var(--bg-2);
 }
 .contact-grid {
   display: grid;
@@ -1229,89 +1089,179 @@ button {
 }
 
 /* ============================================================
-   FOOTER  — Desktop & Tablet layout (unchanged)
+   FOOTER — desktop & tablet IDENTICAL layout
+   Mobile only changes below in @media (max-width: 768px)
    ============================================================ */
 .footer {
   background: var(--bg-3);
-  border-top: 1px solid var(--border);
-  padding: 40px 0 0;
+  border-top: 4px solid var(--primary);
 }
-.footer-grid {
+
+/* This single grid is used for BOTH desktop and tablet */
+.footer-main {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 32px;
-  padding-bottom: 36px;
+  grid-template-columns: 2.2fr 1fr 1fr 1.4fr;
+  gap: 48px;
+  padding-top: 52px;
+  padding-bottom: 48px;
+  align-items: start;
 }
-.footer-brand p {
-  color: var(--text-muted);
-  font-size: 0.74rem;
-  margin: 10px 0 16px;
-  max-width: 240px;
-  line-height: 1.65;
-}
-.footer-socials {
+
+.fc-brand {
   display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 12px;
 }
-.footer-socials a {
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  display: inline-block;
+}
+.fc-tagline {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+.fc-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 280px;
+}
+.fc-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 4px;
+}
+.fc-socials a {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
   background: var(--card-bg);
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--text-muted);
-  font-size: 0.7rem;
+  font-size: 0.76rem;
   transition: var(--transition);
 }
-.footer-socials a:hover {
+.fc-socials a:hover {
   background: var(--primary);
   border-color: var(--primary);
   color: #fff;
   transform: translateY(-2px);
 }
-.footer-col h4 {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--heading);
-  margin-bottom: 14px;
-}
-.footer-col ul {
+
+.fc-col {
   display: flex;
   flex-direction: column;
-  gap: 7px;
 }
-.footer-col ul li {
-  font-size: 0.72rem;
-  color: var(--text-muted);
+.fc-heading {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 18px;
+  position: relative;
+  padding-bottom: 10px;
+}
+.fc-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+.fc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.fc-list li a {
   display: flex;
   align-items: center;
-  gap: 6px;
-}
-.footer-col ul li a {
+  gap: 8px;
+  font-size: 0.78rem;
   color: var(--text-muted);
   transition:
-    color 0.25s,
-    padding-left 0.25s;
+    color 0.25s ease,
+    gap 0.25s ease;
 }
-.footer-col ul li a:hover {
+.fc-list li a i {
+  font-size: 0.55rem;
   color: var(--primary);
-  padding-left: 3px;
+  flex-shrink: 0;
 }
-.footer-col ul li i {
+.fc-list li a:hover {
   color: var(--primary);
-  font-size: 0.68rem;
-  width: 13px;
+  gap: 12px;
 }
-.footer-bottom {
-  border-top: 1px solid var(--border);
-  padding: 14px 0;
-  text-align: center;
-  font-size: 0.7rem;
+
+.fc-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.fc-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.fc-contact-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  background: rgba(255, 101, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 0.8rem;
+}
+.fc-contact-label {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 600;
   color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+.fc-contact-val {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: color 0.25s ease;
+}
+a.fc-contact-val:hover {
+  color: var(--primary);
+}
+
+.footer-bar {
+  border-top: 1px solid var(--border);
+}
+.footer-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.footer-bar-inner p {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+.footer-bar-inner p i {
+  color: var(--primary);
 }
 
 /* ============================================================
@@ -1368,10 +1318,15 @@ button {
   .about-grid {
     gap: 36px;
   }
+  .footer-main {
+    grid-template-columns: 2fr 1fr 1fr 1.2fr;
+    gap: 36px;
+  }
 }
 
 /* ============================================================
    RESPONSIVE — 1024px  TABLET
+   footer-main is NOT changed here — stays identical to desktop
    ============================================================ */
 @media (max-width: 1024px) {
   .sec {
@@ -1387,7 +1342,6 @@ button {
     overflow: visible;
   }
 
-  /* Hamburger + drawer */
   .hamburger {
     display: flex;
   }
@@ -1444,14 +1398,9 @@ button {
     color: #fff !important;
   }
 
-  /* About tablet — center only heading & paragraph */
   .about-grid {
     grid-template-columns: 1fr 1fr;
     gap: 28px;
-  }
-  .about-img-wrap {
-    max-height: 50vh;
-    aspect-ratio: 4/3;
   }
   .about-label {
     text-align: center;
@@ -1464,25 +1413,14 @@ button {
     text-align: center;
   }
 
-  /* Services */
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
   }
-
-  /* Portfolio */
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-
-  /* Blog */
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
   }
-
-  /* Contact */
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -1494,22 +1432,19 @@ button {
     padding: 20px 18px;
   }
 
-  /* Footer — unchanged on tablet (still 2-col grid) */
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-
   .section-title {
     font-size: clamp(1.35rem, 2.8vw, 1.9rem);
   }
   .section-header {
     margin-bottom: 18px;
   }
+
+  /* footer-main intentionally NOT overridden here
+     so tablet gets exact same layout as desktop     */
 }
 
 /* ============================================================
-   RESPONSIVE — 768px  MOBILE
+   RESPONSIVE — 768px  MOBILE ONLY
    ============================================================ */
 @media (max-width: 768px) {
   :root {
@@ -1520,7 +1455,6 @@ button {
     padding: 52px 0;
   }
 
-  /* Hero */
   .hero-sec {
     height: auto;
     min-height: 100svh;
@@ -1543,7 +1477,6 @@ button {
     font-size: 0.76rem;
   }
 
-  /* Nav */
   .nav-menu {
     padding: 8px 14px 14px;
   }
@@ -1552,7 +1485,6 @@ button {
     font-size: 0.88rem;
   }
 
-  /* Section header */
   .section-title {
     font-size: 1.25rem;
   }
@@ -1567,7 +1499,6 @@ button {
     margin-bottom: 16px;
   }
 
-  /* About mobile — stack + center ONLY heading & paragraph */
   .about-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1575,17 +1506,6 @@ button {
   .about-visual {
     order: -1;
     width: 100%;
-  }
-  .about-img-wrap {
-    max-height: 240px;
-    aspect-ratio: 16/9;
-    border-radius: var(--radius);
-  }
-  .about-badge-float {
-    font-size: 0.65rem;
-    padding: 6px 10px;
-    bottom: 10px;
-    left: 10px;
   }
   .about-label {
     text-align: center;
@@ -1599,7 +1519,12 @@ button {
     font-size: 0.76rem;
     margin-bottom: 12px;
   }
-  /* highlights, stats, button stay left-aligned (default) */
+  .about-badge-float {
+    font-size: 0.65rem;
+    padding: 6px 10px;
+    bottom: 10px;
+    left: 10px;
+  }
   .about-highlights {
     gap: 6px;
     margin-bottom: 12px;
@@ -1621,7 +1546,6 @@ button {
     padding: 10px 6px;
   }
 
-  /* Services */
   .services-grid {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -1644,7 +1568,6 @@ button {
     font-size: 0.92rem;
   }
 
-  /* Products */
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
@@ -1656,19 +1579,6 @@ button {
     font-size: 0.67rem;
   }
 
-  /* Portfolio */
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  .portfolio-meta-left > h4 {
-    font-size: 0.74rem;
-  }
-  .portfolio-meta-left > span {
-    font-size: 0.62rem;
-  }
-
-  /* Blog */
   .blog-grid {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -1686,7 +1596,6 @@ button {
     font-size: 0.68rem;
   }
 
-  /* Contact */
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -1718,78 +1627,32 @@ button {
     padding: 8px 10px;
   }
 
-  /* ---- FOOTER MOBILE ONLY ---- */
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
+  /* ---- FOOTER MOBILE — 2 col grid ---- */
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 28px 20px;
+    padding-top: 36px;
+    padding-bottom: 32px;
   }
-
-  /* Brand — centered */
-  .footer-brand {
-    text-align: center;
+  /* Brand spans full width on top */
+  .fc-brand {
+    grid-column: 1 / -1;
     padding-bottom: 22px;
     border-bottom: 1px solid var(--border);
-    margin-bottom: 22px;
   }
-  .footer-brand p {
+  .fc-desc {
     max-width: 100%;
-    margin: 8px auto 14px;
   }
-  .footer-brand .nav-logo {
-    display: inline-flex;
-  }
-  .footer-socials {
-    justify-content: center;
-  }
+  /* 3 cols after brand become 2+1 naturally in 2-col grid */
 
-  /* Quick Links + Services side by side */
-  .footer-col:nth-child(2),
-  .footer-col:nth-child(3) {
-    display: inline-block;
-    width: calc(50% - 8px);
-    vertical-align: top;
+  .footer-bar-inner {
+    flex-direction: column;
     text-align: center;
+    gap: 4px;
   }
-  .footer-col:nth-child(2) {
-    margin-right: 8px;
-  }
-
-  /* Wrap cols 2&3 in a row using flex trick via adjacent sibling */
-  /* Better: use a wrapper approach with CSS */
-  .footer-grid .footer-col:nth-child(2) {
-    margin-bottom: 0;
-  }
-
-  /* All footer cols centered */
-  .footer-col {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .footer-col h4 {
-    font-size: 0.74rem;
-    margin-bottom: 10px;
-  }
-  .footer-col ul {
-    gap: 6px;
-  }
-  .footer-col ul li {
-    font-size: 0.66rem;
-    justify-content: center;
-  }
-  .footer-col ul li a {
-    text-align: center;
-  }
-
-  /* Quick Links & Services row */
-  .footer-cols-inline {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-
-  .footer-bottom {
-    font-size: 0.64rem;
+  .footer-bar-inner p {
+    font-size: 0.7rem;
   }
 }
 
@@ -1842,9 +1705,6 @@ button {
     font-size: 0.72rem;
   }
 
-  .about-img-wrap {
-    max-height: 200px;
-  }
   .about-title {
     font-size: 1.1rem;
   }
@@ -1881,11 +1741,6 @@ button {
     grid-template-columns: 1fr;
     gap: 10px;
   }
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
   .blog-grid {
     grid-template-columns: 1fr;
     gap: 10px;
@@ -1910,7 +1765,15 @@ button {
     font-size: 0.74rem;
   }
 
-  .footer-bottom {
-    font-size: 0.62rem;
+  /* Footer 480px — single column */
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .fc-brand {
+    grid-column: auto;
+  }
+  .footer-bar-inner p {
+    font-size: 0.66rem;
   }
 }
