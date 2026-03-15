@@ -4,13 +4,12 @@
 "use strict";
 
 /* ============================================================
-   THEME TOGGLE — default light, saved in localStorage
+   THEME TOGGLE — default light
    ============================================================ */
 const html = document.documentElement;
 const themeToggle = document.getElementById("themeToggle");
 const themeIcon = document.getElementById("themeIcon");
 
-// Default = light unless user previously changed it
 const savedTheme = localStorage.getItem("ks-theme") || "light";
 html.setAttribute("data-theme", savedTheme);
 applyIcon(savedTheme);
@@ -29,23 +28,20 @@ function applyIcon(theme) {
 }
 
 /* ============================================================
-   NAVBAR — active link + scroll shadow
+   NAVBAR
    ============================================================ */
 const navbar = document.getElementById("navbar");
 const navLinks = document.querySelectorAll(".nav-link");
 const backToTop = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
-  // Deeper shadow on scroll
   navbar.style.boxShadow =
     window.scrollY > 10
-      ? "0 4px 24px rgba(0,0,0,0.16)"
-      : "0 2px 16px rgba(0,0,0,0.10)";
+      ? "0 4px 24px rgba(0,0,0,0.14)"
+      : "0 2px 16px rgba(0,0,0,0.08)";
 
-  // Back-to-top visibility
   backToTop.classList.toggle("show", window.scrollY > 400);
 
-  // Active nav link detection
   const sections = document.querySelectorAll("section[id]");
   let current = "";
   sections.forEach((sec) => {
@@ -60,7 +56,7 @@ window.addEventListener("scroll", () => {
 });
 
 /* ============================================================
-   HAMBURGER MENU
+   HAMBURGER
    ============================================================ */
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
@@ -72,7 +68,6 @@ hamburger.addEventListener("click", (e) => {
 });
 
 navLinks.forEach((link) => link.addEventListener("click", closeMenu));
-
 document.addEventListener("click", (e) => {
   if (!navbar.contains(e.target)) closeMenu();
 });
@@ -83,7 +78,7 @@ function closeMenu() {
 }
 
 /* ============================================================
-   HERO CAROUSEL — auto slide every 4s
+   HERO CAROUSEL
    ============================================================ */
 const slides = document.querySelectorAll(".hero-slide");
 const dots = document.querySelectorAll(".dot");
@@ -97,7 +92,6 @@ function goTo(index) {
   slides[current].classList.add("active");
   dots[current].classList.add("active");
 }
-
 function startCarousel() {
   autoTimer = setInterval(() => goTo(current + 1), 4000);
 }
@@ -112,8 +106,43 @@ dots.forEach((dot) => {
     resetCarousel();
   });
 });
-
 startCarousel();
+
+/* ============================================================
+   TEAM — View Details Toggle
+   ============================================================ */
+function toggleDetails(btn) {
+  const card = btn.closest(".member-card");
+  const details = card.querySelector(".member-details");
+  const isOpen = details.classList.contains("open");
+
+  // Close all other open cards first
+  document.querySelectorAll(".member-details.open").forEach((d) => {
+    d.classList.remove("open");
+    d.closest(".member-card")
+      .querySelector(".btn-view-details")
+      .classList.remove("open");
+    d.closest(".member-card").querySelector(".btn-text").textContent =
+      "View Details";
+  });
+
+  // Toggle current
+  if (!isOpen) {
+    details.classList.add("open");
+    btn.classList.add("open");
+    btn.querySelector(".btn-text").textContent = "Hide Details";
+
+    // Inject inner HTML if not already done
+    if (!details.querySelector(".member-details-inner")) {
+      details.innerHTML = details.innerHTML; // already has content from HTML
+    }
+
+    // Smooth scroll to card
+    setTimeout(() => {
+      card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }, 100);
+  }
+}
 
 /* ============================================================
    CONTACT FORM
@@ -132,7 +161,7 @@ contactForm.addEventListener("submit", (e) => {
     return;
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    alert("Please enter a valid email address.");
+    alert("Please enter a valid email.");
     return;
   }
 
@@ -162,10 +191,10 @@ backToTop.addEventListener("click", () =>
 document.getElementById("year").textContent = new Date().getFullYear();
 
 /* ============================================================
-   SCROLL REVEAL — IntersectionObserver
+   SCROLL REVEAL
    ============================================================ */
 const revealEls = document.querySelectorAll(
-  ".service-card, .product-card, .portfolio-item, .blog-card, .about-grid, .contact-grid",
+  ".service-card, .product-card, .portfolio-item, .blog-card, .member-card, .about-grid, .contact-grid, .team-join-card",
 );
 
 const observer = new IntersectionObserver(
