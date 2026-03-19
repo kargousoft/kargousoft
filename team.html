@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Team – KargouSoft</title>
+    <title>Shanto Karmoker – KargouSoft</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,15 +21,14 @@
     <!-- NAVBAR -->
     <header class="navbar" id="navbar">
       <div class="nav-container">
-        <a href="index.html" class="nav-logo">
+        <a href="index.html#home" class="nav-logo">
           <span class="logo-k">Kargou</span><span class="logo-s">Soft</span>
         </a>
         <nav class="nav-menu" id="navMenu">
-          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html#home" class="nav-link">Home</a>
           <a href="index.html#about" class="nav-link">About</a>
           <a href="index.html#services" class="nav-link">Services</a>
           <a href="index.html#products" class="nav-link">Products</a>
-          <a href="index.html#portfolio" class="nav-link">Portfolio</a>
           <a href="index.html#blog" class="nav-link">Blog</a>
           <a href="index.html#contact" class="nav-link nav-cta">Contact</a>
         </nav>
@@ -48,81 +47,203 @@
       </div>
     </header>
 
-    <!-- PAGE HERO -->
-    <section class="page-hero">
-      <div class="page-hero-content">
-        <div class="breadcrumb">
-          <a href="index.html"><i class="fas fa-home"></i> Home</a>
-          <i class="fas fa-chevron-right"></i>
-          <span>Our Team</span>
-        </div>
-        <h1>Meet Our <span class="accent">Team</span></h1>
-        <p>
-          The passionate minds building the future of software at KargouSoft.
-        </p>
-      </div>
-    </section>
-
-    <!-- TEAM MAIN -->
-    <main class="team-main">
+    <!-- EMPLOYEE PROFILE -->
+    <section class="emp-section">
       <div class="container">
-        <div class="team-grid">
-          <!-- Employee Card -->
-          <div
-            class="emp-card"
-            onclick="window.location = 'employee.html?id=shanto'"
-          >
-            <div class="emp-card-img">
+        <!-- Breadcrumb -->
+        <div class="emp-breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="fas fa-chevron-right"></i>
+          <a href="team.html">Team</a>
+          <i class="fas fa-chevron-right"></i>
+          <span>Shanto Karmoker</span>
+        </div>
+
+        <div class="emp-grid">
+          <!-- Left: Photo + Info -->
+          <div class="emp-sidebar">
+            <div class="emp-photo-wrap">
               <img
                 src="https://avatars.githubusercontent.com/u/126598101?v=4"
                 alt="Shanto Karmoker"
+                class="emp-photo"
               />
-              <span class="emp-active-badge"
-                ><i class="fas fa-circle"></i> Active</span
-              >
+              <div class="emp-status"><span></span> Active Member</div>
             </div>
-            <div class="emp-card-body">
-              <div class="emp-id">KS-001</div>
-              <h3 class="emp-name">Shanto Karmoker</h3>
-              <span class="emp-role">Software Developer</span>
+            <div class="emp-id-badge">
+              <i class="fas fa-id-card"></i> KS-001
             </div>
-            <div class="emp-card-footer">
-              <a
-                href="employee.html?id=shanto"
-                class="emp-details-btn"
-                onclick="event.stopPropagation()"
-              >
-                <i class="fas fa-user"></i> View Details
-              </a>
+            <h1 class="emp-name">Shanto Karmoker</h1>
+            <p class="emp-title">Software Developer</p>
+
+            <ul class="emp-contact-list">
+              <li>
+                <div class="emp-contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="emp-contact-label">Email</span>
+                  <a
+                    href="mailto:shantokarmoker8@gmail.com"
+                    class="emp-contact-val"
+                    >shantokarmoker8@gmail.com</a
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="emp-contact-icon"><i class="fas fa-phone"></i></div>
+                <div>
+                  <span class="emp-contact-label">Phone</span>
+                  <a href="tel:+8801798046899" class="emp-contact-val"
+                    >+880 1798 046 899</a
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="emp-contact-icon">
+                  <i class="fab fa-github"></i>
+                </div>
+                <div>
+                  <span class="emp-contact-label">GitHub</span>
+                  <a
+                    href="https://github.com/shantokarmoker8"
+                    target="_blank"
+                    class="emp-contact-val"
+                    >shantokarmoker8</a
+                  >
+                </div>
+              </li>
+            </ul>
+
+            <div class="emp-social-row">
+              <a href="https://github.com/shantokarmoker8" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="mailto:shantokarmoker8@gmail.com"
+                ><i class="fas fa-envelope"></i
+              ></a>
+              <a href="tel:+8801798046899"><i class="fas fa-phone"></i></a>
             </div>
+
+            <a href="team.html" class="emp-back-btn">
+              <i class="fas fa-arrow-left"></i> Back to Team
+            </a>
           </div>
 
-          <!-- Hiring Card -->
-          <div class="emp-card emp-hire-card">
-            <div class="emp-hire-icon"><i class="fas fa-user-plus"></i></div>
-            <h3>We Are Hiring!</h3>
-            <p>
-              Passionate about software? Join our growing team and build
-              something amazing together.
-            </p>
-            <a href="index.html#contact" class="btn btn-primary btn-sm"
-              >Apply Now <i class="fas fa-arrow-right"></i
-            ></a>
+          <!-- Right: About + Skills -->
+          <div class="emp-main">
+            <div class="emp-about-card">
+              <h2 class="emp-section-title">
+                <i class="fas fa-user"></i> About
+              </h2>
+              <p>
+                Shanto Karmoker is a passionate and creative software developer
+                at KargouSoft. He specializes in building modern web
+                applications, automation tools, and scalable backend systems. He
+                is dedicated to writing clean, efficient code and continuously
+                improving his skills to stay ahead in the rapidly evolving tech
+                landscape.
+              </p>
+            </div>
+
+            <div class="emp-skills-card">
+              <h2 class="emp-section-title">
+                <i class="fas fa-code"></i> Skills & Technologies
+              </h2>
+              <div class="emp-skills-grid">
+                <div class="emp-skill-item">
+                  <div class="emp-skill-top">
+                    <span>Python</span><span>90%</span>
+                  </div>
+                  <div class="emp-skill-bar">
+                    <div class="emp-skill-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="emp-skill-item">
+                  <div class="emp-skill-top">
+                    <span>JavaScript</span><span>82%</span>
+                  </div>
+                  <div class="emp-skill-bar">
+                    <div class="emp-skill-fill" style="width: 82%"></div>
+                  </div>
+                </div>
+                <div class="emp-skill-item">
+                  <div class="emp-skill-top">
+                    <span>React.js</span><span>75%</span>
+                  </div>
+                  <div class="emp-skill-bar">
+                    <div class="emp-skill-fill" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div class="emp-skill-item">
+                  <div class="emp-skill-top">
+                    <span>Django / FastAPI</span><span>85%</span>
+                  </div>
+                  <div class="emp-skill-bar">
+                    <div class="emp-skill-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="emp-skill-item">
+                  <div class="emp-skill-top">
+                    <span>MySQL / PostgreSQL</span><span>78%</span>
+                  </div>
+                  <div class="emp-skill-bar">
+                    <div class="emp-skill-fill" style="width: 78%"></div>
+                  </div>
+                </div>
+                <div class="emp-skill-item">
+                  <div class="emp-skill-top">
+                    <span>Git / GitHub</span><span>88%</span>
+                  </div>
+                  <div class="emp-skill-bar">
+                    <div class="emp-skill-fill" style="width: 88%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="emp-tags-card">
+              <h2 class="emp-section-title">
+                <i class="fas fa-tags"></i> Tech Stack
+              </h2>
+              <div class="emp-tags">
+                <span>Python</span>
+                <span>JavaScript</span>
+                <span>React.js</span>
+                <span>Django</span>
+                <span>FastAPI</span>
+                <span>Node.js</span>
+                <span>MySQL</span>
+                <span>PostgreSQL</span>
+                <span>MongoDB</span>
+                <span>Docker</span>
+                <span>Git</span>
+                <span>REST API</span>
+                <span>Linux</span>
+                <span>AI Automation</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </main>
+    </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <a href="index.html" class="nav-logo">
+      <div class="footer-inner">
+        <div class="footer-main container">
+          <div class="fc-brand">
+            <a href="index.html#home" class="footer-logo">
               <span class="logo-k">Kargou</span><span class="logo-s">Soft</span>
             </a>
-            <p>Software Solutions | Business Automation | SaaS Development</p>
-            <div class="footer-socials">
+            <p class="fc-tagline">
+              Software Solutions · Business Automation · SaaS
+            </p>
+            <p class="fc-desc">
+              We build innovative software solutions and automation systems for
+              startups and enterprises.
+            </p>
+            <div class="fc-socials">
               <a href="https://www.facebook.com/kargousoft" target="_blank"
                 ><i class="fab fa-facebook-f"></i
               ></a>
@@ -151,41 +272,111 @@
               ></a>
             </div>
           </div>
-          <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="index.html#about">About</a></li>
-              <li><a href="index.html#services">Services</a></li>
-              <li><a href="index.html#products">Products</a></li>
-              <li><a href="team.html">Team</a></li>
+          <div class="fc-col">
+            <h4 class="fc-heading">Quick Links</h4>
+            <ul class="fc-list">
+              <li>
+                <a href="index.html#home"
+                  ><i class="fas fa-chevron-right"></i>Home</a
+                >
+              </li>
+              <li>
+                <a href="index.html#about"
+                  ><i class="fas fa-chevron-right"></i>About</a
+                >
+              </li>
+              <li>
+                <a href="index.html#services"
+                  ><i class="fas fa-chevron-right"></i>Services</a
+                >
+              </li>
+              <li>
+                <a href="index.html#products"
+                  ><i class="fas fa-chevron-right"></i>Products</a
+                >
+              </li>
+              <li>
+                <a href="index.html#blog"
+                  ><i class="fas fa-chevron-right"></i>Blog</a
+                >
+              </li>
             </ul>
           </div>
-          <div class="footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="index.html#services">Custom Software</a></li>
-              <li><a href="index.html#services">Web Applications</a></li>
-              <li><a href="index.html#services">Business Automation</a></li>
-              <li><a href="index.html#services">SaaS Development</a></li>
-              <li><a href="index.html#services">Cloud Integration</a></li>
+          <div class="fc-col">
+            <h4 class="fc-heading">Services</h4>
+            <ul class="fc-list">
+              <li>
+                <a href="index.html#services"
+                  ><i class="fas fa-chevron-right"></i>Custom Software</a
+                >
+              </li>
+              <li>
+                <a href="index.html#services"
+                  ><i class="fas fa-chevron-right"></i>Web Applications</a
+                >
+              </li>
+              <li>
+                <a href="index.html#services"
+                  ><i class="fas fa-chevron-right"></i>Business Automation</a
+                >
+              </li>
+              <li>
+                <a href="index.html#services"
+                  ><i class="fas fa-chevron-right"></i>SaaS Development</a
+                >
+              </li>
+              <li>
+                <a href="index.html#services"
+                  ><i class="fas fa-chevron-right"></i>Cloud Integration</a
+                >
+              </li>
             </ul>
           </div>
-          <div class="footer-col">
-            <h4>Contact</h4>
-            <ul>
-              <li><i class="fas fa-envelope"></i> info@kargousoft.com</li>
-              <li><i class="fas fa-phone"></i> +880 000 000 000</li>
-              <li><i class="fas fa-map-marker-alt"></i> Bangladesh</li>
+          <div class="fc-col">
+            <h4 class="fc-heading">Contact Us</h4>
+            <ul class="fc-contact-list">
+              <li>
+                <div class="fc-contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="fc-contact-label">Email</span>
+                  <a href="mailto:info@kargousoft.com" class="fc-contact-val"
+                    >info@kargousoft.com</a
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="fc-contact-icon"><i class="fas fa-phone"></i></div>
+                <div>
+                  <span class="fc-contact-label">Phone</span>
+                  <a href="tel:+880000000000" class="fc-contact-val"
+                    >+880 000 000 000</a
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="fc-contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <span class="fc-contact-label">Location</span>
+                  <span class="fc-contact-val">Bangladesh</span>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
-        <div class="footer-bottom">
-          <p>
-            &copy; <span id="year"></span> KargouSoft. All Rights Reserved. Made
-            with <i class="fas fa-heart" style="color: #ff6500"></i> in
-            Bangladesh.
-          </p>
+        <div class="footer-bar">
+          <div class="container footer-bar-inner">
+            <p>
+              &copy; <span id="year"></span> KargouSoft. All Rights Reserved.
+            </p>
+            <p>
+              Made with <i class="fas fa-heart" style="color: #ff6500"></i> in
+              Bangladesh
+            </p>
+          </div>
         </div>
       </div>
     </footer>
