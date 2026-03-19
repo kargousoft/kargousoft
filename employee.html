@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Employee Profile – KargouSoft</title>
+    <title>Shanto Karmoker – KargouSoft</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,15 +21,14 @@
     <!-- NAVBAR -->
     <header class="navbar" id="navbar">
       <div class="nav-container">
-        <a href="index.html" class="nav-logo">
+        <a href="index.html#home" class="nav-logo">
           <span class="logo-k">Kargou</span><span class="logo-s">Soft</span>
         </a>
         <nav class="nav-menu" id="navMenu">
-          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html#home" class="nav-link">Home</a>
           <a href="index.html#about" class="nav-link">About</a>
           <a href="index.html#services" class="nav-link">Services</a>
           <a href="index.html#products" class="nav-link">Products</a>
-          <a href="index.html#portfolio" class="nav-link">Portfolio</a>
           <a href="index.html#blog" class="nav-link">Blog</a>
           <a href="index.html#contact" class="nav-link nav-cta">Contact</a>
         </nav>
@@ -49,183 +48,123 @@
     </header>
 
     <!-- EMPLOYEE PROFILE -->
-    <main class="emp-profile-main">
+    <section class="emp-section">
       <div class="container">
-        <!-- Breadcrumb -->
-        <div class="breadcrumb emp-breadcrumb">
-          <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <div class="emp-breadcrumb">
+          <a href="index.html">Home</a>
           <i class="fas fa-chevron-right"></i>
           <a href="team.html">Team</a>
           <i class="fas fa-chevron-right"></i>
-          <span>Employee Profile</span>
+          <span>Shanto Karmoker</span>
         </div>
 
-        <!-- Profile Card -->
-        <div class="emp-profile-wrap">
-          <!-- LEFT — Photo + Quick Info -->
-          <div class="emp-profile-left">
-            <div class="emp-profile-photo-wrap">
+        <div class="emp-grid">
+          <!-- Sidebar -->
+          <div class="emp-sidebar">
+            <div class="emp-photo-wrap">
               <img
                 src="https://avatars.githubusercontent.com/u/126598101?v=4"
                 alt="Shanto Karmoker"
-                class="emp-profile-photo"
+                class="emp-photo"
               />
-              <div class="emp-online-dot">
-                <i class="fas fa-circle"></i> Active
-              </div>
+              <div class="emp-status"><span></span> Active Member</div>
+            </div>
+            <div class="emp-id-badge">
+              <i class="fas fa-id-card"></i> KS-001
+            </div>
+            <h1 class="emp-name">Shanto Karmoker</h1>
+            <p class="emp-title">Software Developer</p>
+
+            <ul class="emp-contact-list">
+              <li>
+                <div class="emp-contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="emp-contact-label">Email</span>
+                  <a
+                    href="mailto:shantokarmoker8@gmail.com"
+                    class="emp-contact-val"
+                    >shantokarmoker8@gmail.com</a
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="emp-contact-icon"><i class="fas fa-phone"></i></div>
+                <div>
+                  <span class="emp-contact-label">Phone</span>
+                  <a href="tel:+8801798046899" class="emp-contact-val"
+                    >+880 1798 046 899</a
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="emp-contact-icon">
+                  <i class="fab fa-github"></i>
+                </div>
+                <div>
+                  <span class="emp-contact-label">GitHub</span>
+                  <a
+                    href="https://github.com/shantokarmoker8"
+                    target="_blank"
+                    class="emp-contact-val"
+                    >shantokarmoker8</a
+                  >
+                </div>
+              </li>
+            </ul>
+
+            <div class="emp-social-row">
+              <a href="https://github.com/shantokarmoker8" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="mailto:shantokarmoker8@gmail.com"
+                ><i class="fas fa-envelope"></i
+              ></a>
+              <a href="tel:+8801798046899"><i class="fas fa-phone"></i></a>
             </div>
 
-            <div class="emp-profile-quick">
-              <div class="emp-qid">
-                <i class="fas fa-id-badge"></i>
-                <div>
-                  <span class="q-label">Employee ID</span>
-                  <span class="q-value">KS-001</span>
-                </div>
-              </div>
-              <div class="emp-qid">
-                <i class="fas fa-briefcase"></i>
-                <div>
-                  <span class="q-label">Department</span>
-                  <span class="q-value">Engineering</span>
-                </div>
-              </div>
-              <div class="emp-qid">
-                <i class="fas fa-map-marker-alt"></i>
-                <div>
-                  <span class="q-label">Location</span>
-                  <span class="q-value">Bangladesh</span>
-                </div>
-              </div>
-            </div>
-
-            <a href="team.html" class="btn-back">
+            <a href="team.html" class="emp-back-btn">
               <i class="fas fa-arrow-left"></i> Back to Team
             </a>
           </div>
 
-          <!-- RIGHT — Details -->
-          <div class="emp-profile-right">
-            <div class="emp-profile-header">
-              <h1 class="emp-profile-name">Shanto Karmoker</h1>
-              <span class="emp-profile-role">Software Developer</span>
-            </div>
-
-            <!-- Description -->
-            <div class="emp-profile-section">
-              <h4><i class="fas fa-user-circle"></i> About</h4>
+          <!-- Main -->
+          <div class="emp-main">
+            <div class="emp-about-card">
+              <h2 class="emp-section-title">
+                <i class="fas fa-user"></i> About
+              </h2>
               <p>
-                Shanto Karmoker is the founder and lead software developer of
-                KargouSoft. He is passionate about building innovative software
-                solutions, business automation systems, and scalable SaaS
-                platforms. With a strong focus on clean code and modern
-                technologies, Shanto is dedicated to delivering high-quality
-                software that solves real-world problems. He specializes in
-                Python, web development, and AI-powered automation workflows,
-                and is committed to growing KargouSoft into a leading software
-                company in Bangladesh.
+                Shanto Karmoker is a passionate and creative software developer
+                at KargouSoft. He specializes in building modern web
+                applications, automation tools, and scalable backend systems. He
+                is dedicated to writing clean, efficient code and continuously
+                improving his skills to stay ahead in the rapidly evolving tech
+                landscape.
               </p>
-            </div>
-
-            <!-- Skills -->
-            <div class="emp-profile-section">
-              <h4><i class="fas fa-code"></i> Skills</h4>
-              <div class="emp-skills">
-                <span>Python</span>
-                <span>Django</span>
-                <span>FastAPI</span>
-                <span>JavaScript</span>
-                <span>HTML / CSS</span>
-                <span>AI Automation</span>
-                <span>REST API</span>
-                <span>Git</span>
-                <span>Linux</span>
-              </div>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="emp-profile-section">
-              <h4><i class="fas fa-address-card"></i> Contact Information</h4>
-              <div class="emp-contact-grid">
-                <div class="emp-contact-item">
-                  <div class="emp-contact-icon">
-                    <i class="fas fa-envelope"></i>
-                  </div>
-                  <div>
-                    <span class="ec-label">Email</span>
-                    <a href="mailto:shantokarmoker8@gmail.com" class="ec-value"
-                      >shantokarmoker8@gmail.com</a
-                    >
-                  </div>
-                </div>
-                <div class="emp-contact-item">
-                  <div class="emp-contact-icon">
-                    <i class="fas fa-phone"></i>
-                  </div>
-                  <div>
-                    <span class="ec-label">Phone</span>
-                    <a href="tel:+8801798046899" class="ec-value"
-                      >+880 1798 046 899</a
-                    >
-                  </div>
-                </div>
-                <div class="emp-contact-item">
-                  <div class="emp-contact-icon">
-                    <i class="fab fa-github"></i>
-                  </div>
-                  <div>
-                    <span class="ec-label">GitHub</span>
-                    <a
-                      href="https://github.com/shantokarmoker8"
-                      target="_blank"
-                      class="ec-value"
-                      >github.com/shantokarmoker8</a
-                    >
-                  </div>
-                </div>
-                <div class="emp-contact-item">
-                  <div class="emp-contact-icon">
-                    <i class="fas fa-id-badge"></i>
-                  </div>
-                  <div>
-                    <span class="ec-label">Employee ID</span>
-                    <span class="ec-value">KS-001</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="emp-profile-section">
-              <h4><i class="fas fa-share-alt"></i> Connect</h4>
-              <div class="emp-profile-socials">
-                <a href="mailto:shantokarmoker8@gmail.com" title="Email">
-                  <i class="fas fa-envelope"></i>
-                </a>
-                <a
-                  href="https://github.com/shantokarmoker8"
-                  target="_blank"
-                  title="GitHub"
-                >
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <a href="index.html" class="nav-logo">
+      <div class="footer-inner">
+        <div class="footer-main container">
+          <div class="fc-brand">
+            <a href="index.html#home" class="footer-logo">
               <span class="logo-k">Kargou</span><span class="logo-s">Soft</span>
             </a>
-            <p>Software Solutions | Business Automation | SaaS Development</p>
-            <div class="footer-socials">
+            <p class="fc-tagline">
+              Software Solutions · Business Automation · SaaS
+            </p>
+            <p class="fc-desc">
+              We build innovative software solutions and automation systems for
+              startups and enterprises.
+            </p>
+            <div class="fc-socials">
               <a href="https://www.facebook.com/kargousoft" target="_blank"
                 ><i class="fab fa-facebook-f"></i
               ></a>
@@ -254,41 +193,111 @@
               ></a>
             </div>
           </div>
-          <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="index.html#about">About</a></li>
-              <li><a href="index.html#services">Services</a></li>
-              <li><a href="index.html#products">Products</a></li>
-              <li><a href="team.html">Team</a></li>
+          <div class="fc-col">
+            <h4 class="fc-heading">Quick Links</h4>
+            <ul class="fc-list">
+              <li>
+                <a href="index.html#home"
+                  ><i class="fas fa-chevron-right"></i>Home</a
+                >
+              </li>
+              <li>
+                <a href="index.html#about"
+                  ><i class="fas fa-chevron-right"></i>About</a
+                >
+              </li>
+              <li>
+                <a href="index.html#services"
+                  ><i class="fas fa-chevron-right"></i>Services</a
+                >
+              </li>
+              <li>
+                <a href="index.html#products"
+                  ><i class="fas fa-chevron-right"></i>Products</a
+                >
+              </li>
+              <li>
+                <a href="index.html#blog"
+                  ><i class="fas fa-chevron-right"></i>Blog</a
+                >
+              </li>
             </ul>
           </div>
-          <div class="footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="index.html#services">Custom Software</a></li>
-              <li><a href="index.html#services">Web Applications</a></li>
-              <li><a href="index.html#services">Business Automation</a></li>
-              <li><a href="index.html#services">SaaS Development</a></li>
-              <li><a href="index.html#services">Cloud Integration</a></li>
+          <div class="fc-col">
+            <h4 class="fc-heading">Services</h4>
+            <ul class="fc-list">
+              <li>
+                <a href="index.html#services"
+                  ><i class="fas fa-chevron-right"></i>Custom Software</a
+                >
+              </li>
+              <li>
+                <a href="index.html#services"
+                  ><i class="fas fa-chevron-right"></i>Web Applications</a
+                >
+              </li>
+              <li>
+                <a href="index.html#services"
+                  ><i class="fas fa-chevron-right"></i>Business Automation</a
+                >
+              </li>
+              <li>
+                <a href="index.html#services"
+                  ><i class="fas fa-chevron-right"></i>SaaS Development</a
+                >
+              </li>
+              <li>
+                <a href="index.html#services"
+                  ><i class="fas fa-chevron-right"></i>Cloud Integration</a
+                >
+              </li>
             </ul>
           </div>
-          <div class="footer-col">
-            <h4>Contact</h4>
-            <ul>
-              <li><i class="fas fa-envelope"></i> info@kargousoft.com</li>
-              <li><i class="fas fa-phone"></i> +880 000 000 000</li>
-              <li><i class="fas fa-map-marker-alt"></i> Bangladesh</li>
+          <div class="fc-col">
+            <h4 class="fc-heading">Contact Us</h4>
+            <ul class="fc-contact-list">
+              <li>
+                <div class="fc-contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="fc-contact-label">Email</span>
+                  <a href="mailto:info@kargousoft.com" class="fc-contact-val"
+                    >info@kargousoft.com</a
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="fc-contact-icon"><i class="fas fa-phone"></i></div>
+                <div>
+                  <span class="fc-contact-label">Phone</span>
+                  <a href="tel:+880000000000" class="fc-contact-val"
+                    >+880 000 000 000</a
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="fc-contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <span class="fc-contact-label">Location</span>
+                  <span class="fc-contact-val">Bangladesh</span>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
-        <div class="footer-bottom">
-          <p>
-            &copy; <span id="year"></span> KargouSoft. All Rights Reserved. Made
-            with <i class="fas fa-heart" style="color: #ff6500"></i> in
-            Bangladesh.
-          </p>
+        <div class="footer-bar">
+          <div class="container footer-bar-inner">
+            <p>
+              &copy; <span id="year"></span> KargouSoft. All Rights Reserved.
+            </p>
+            <p>
+              Made with <i class="fas fa-heart" style="color: #ff6500"></i> in
+              Bangladesh
+            </p>
+          </div>
         </div>
       </div>
     </footer>
