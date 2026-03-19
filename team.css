@@ -1,254 +1,580 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Team – KargouSoft</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="team.css" />
-</head>
-<body>
+/* ============================================================
+   team.css
+   ============================================================ */
 
-  <!-- NAVBAR -->
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="index.html#home" class="nav-logo">
-        <span class="logo-k">Kargou</span><span class="logo-s">Soft</span>
-      </a>
-      <nav class="nav-menu" id="navMenu">
-        <a href="index.html#home"     class="nav-link">Home</a>
-        <a href="index.html#about"    class="nav-link">About</a>
-        <a href="index.html#services" class="nav-link">Services</a>
-        <a href="index.html#products" class="nav-link">Products</a>
-        <a href="index.html#blog"     class="nav-link">Blog</a>
-        <a href="index.html#contact"  class="nav-link nav-cta">Contact</a>
-      </nav>
-      <div class="nav-right">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-          <i class="fas fa-moon" id="themeIcon"></i>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </header>
+/* ============================
+   TEAM HERO
+   ============================ */
+.team-hero {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--nav-height) + 60px) 24px 60px;
+  background: linear-gradient(135deg, #111214 0%, #1e2025 60%, #2a1a0a 100%);
+  overflow: hidden;
+}
+.team-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 60% 50%,
+    rgba(255, 101, 0, 0.14) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.team-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff6500' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.6;
+}
+.team-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+.team-hero-content .section-label {
+  background: rgba(255, 101, 0, 0.18);
+  border: 1px solid rgba(255, 101, 0, 0.3);
+  color: #ff8533;
+  margin-bottom: 14px;
+}
+.team-hero-content h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+.team-hero-content p {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto;
+}
 
-  <!-- PAGE HERO -->
-  <section class="team-hero">
-    <div class="team-hero-overlay"></div>
-    <div class="team-hero-content">
-      <span class="section-label">The People Behind KargouSoft</span>
-      <h1>Meet Our <span class="accent">Team</span></h1>
-      <p>Passionate developers, designers, and problem-solvers building the future of software together.</p>
-    </div>
-  </section>
+/* ============================
+   TEAM SECTION
+   ============================ */
+.team-section {
+  padding: 72px 0 80px;
+  background: var(--bg);
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
 
-  <!-- TEAM GRID -->
-  <section class="team-section">
-    <div class="container">
-      <div class="team-grid">
+/* ============================
+   TEAM CARD
+   ============================ */
+.team-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+  border-color: rgba(255, 101, 0, 0.25);
+}
 
-        <div class="team-card">
-          <div class="team-card-img">
-            <img src="https://avatars.githubusercontent.com/u/126598101?v=4" alt="Shanto Karmoker" class="team-photo" />
-            <div class="team-card-overlay">
-              <div class="team-socials">
-                <a href="https://github.com/shantokarmoker8" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:shantokarmoker8@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="tel:+8801798046899"><i class="fas fa-phone"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="team-card-body">
-            <div class="team-id">KS-001</div>
-            <h3>Shanto Karmoker</h3>
-            <span class="team-role">Software Developer</span>
-            <a href="employee.html" class="team-btn">View Profile <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
+.team-card-img {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  background: var(--bg-3);
+}
+.team-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.45s ease;
+}
+.team-card:hover .team-photo {
+  transform: scale(1.06);
+}
 
-        <div class="team-card">
-          <div class="team-card-img">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Rafiq Ahmed" class="team-photo" />
-            <div class="team-card-overlay">
-              <div class="team-socials">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="team-card-body">
-            <div class="team-id">KS-002</div>
-            <h3>Rafiq Ahmed</h3>
-            <span class="team-role">Full Stack Developer</span>
-            <a href="#" class="team-btn">View Profile <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
+.team-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 101, 0, 0) 0%,
+    rgba(255, 101, 0, 0.88) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.team-card:hover .team-card-overlay {
+  opacity: 1;
+}
 
-        <div class="team-card">
-          <div class="team-card-img">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Nadia Islam" class="team-photo" />
-            <div class="team-card-overlay">
-              <div class="team-socials">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="team-card-body">
-            <div class="team-id">KS-003</div>
-            <h3>Nadia Islam</h3>
-            <span class="team-role">UI/UX Designer</span>
-            <a href="#" class="team-btn">View Profile <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
+.team-socials {
+  display: flex;
+  gap: 10px;
+}
+.team-socials a {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.8rem;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+.team-socials a:hover {
+  background: #fff;
+  color: var(--primary);
+  transform: translateY(-2px);
+}
 
-        <div class="team-card">
-          <div class="team-card-img">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Karim Hossain" class="team-photo" />
-            <div class="team-card-overlay">
-              <div class="team-socials">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="team-card-body">
-            <div class="team-id">KS-004</div>
-            <h3>Karim Hossain</h3>
-            <span class="team-role">Backend Developer</span>
-            <a href="#" class="team-btn">View Profile <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
+.team-card-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.team-id {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(255, 101, 0, 0.1);
+  border: 1px solid rgba(255, 101, 0, 0.2);
+  border-radius: 50px;
+  padding: 2px 10px;
+  display: inline-block;
+  align-self: flex-start;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.team-card-body h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--heading);
+  line-height: 1.3;
+}
+.team-role {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.team-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: transparent;
+  border: 1px solid rgba(255, 101, 0, 0.3);
+  border-radius: 7px;
+  padding: 6px 14px;
+  align-self: flex-start;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+.team-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+.team-btn i {
+  font-size: 0.68rem;
+}
 
-        <div class="team-card">
-          <div class="team-card-img">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" alt="Sumaiya Akter" class="team-photo" />
-            <div class="team-card-overlay">
-              <div class="team-socials">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="team-card-body">
-            <div class="team-id">KS-005</div>
-            <h3>Sumaiya Akter</h3>
-            <span class="team-role">Frontend Developer</span>
-            <a href="#" class="team-btn">View Profile <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
+/* ============================
+   EMPLOYEE PAGE
+   ============================ */
+.emp-section {
+  padding: calc(var(--nav-height) + 48px) 0 72px;
+  background: var(--bg);
+  min-height: 100vh;
+}
 
-        <div class="team-card">
-          <div class="team-card-img">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Jahid Hasan" class="team-photo" />
-            <div class="team-card-overlay">
-              <div class="team-socials">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="team-card-body">
-            <div class="team-id">KS-006</div>
-            <h3>Jahid Hasan</h3>
-            <span class="team-role">DevOps Engineer</span>
-            <a href="#" class="team-btn">View Profile <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
+.emp-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+.emp-breadcrumb a {
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+.emp-breadcrumb a:hover {
+  color: var(--primary);
+}
+.emp-breadcrumb i {
+  font-size: 0.55rem;
+  color: var(--border);
+}
+.emp-breadcrumb span {
+  color: var(--primary);
+  font-weight: 600;
+}
 
-      </div>
-    </div>
-  </section>
+.emp-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  align-items: start;
+}
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-main container">
-        <div class="fc-brand">
-          <a href="index.html#home" class="footer-logo">
-            <span class="logo-k">Kargou</span><span class="logo-s">Soft</span>
-          </a>
-          <p class="fc-tagline">Software Solutions · Business Automation · SaaS</p>
-          <p class="fc-desc">We build innovative software solutions and automation systems for startups and enterprises across Bangladesh and beyond.</p>
-          <div class="fc-socials">
-            <a href="https://www.facebook.com/kargousoft" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/kargousoft" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.threads.com/kargousoft" target="_blank"><i class="fab fa-threads"></i></a>
-            <a href="https://github.com/kargousoft" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.youtube.com/@kargousoft" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.tiktok.com/@kargousoft" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.x.com/kargousoft" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://www.linkedin.com/company/kargousoft" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-        <div class="fc-col">
-          <h4 class="fc-heading">Quick Links</h4>
-          <ul class="fc-list">
-            <li><a href="index.html#home"><i class="fas fa-chevron-right"></i>Home</a></li>
-            <li><a href="index.html#about"><i class="fas fa-chevron-right"></i>About</a></li>
-            <li><a href="index.html#services"><i class="fas fa-chevron-right"></i>Services</a></li>
-            <li><a href="index.html#products"><i class="fas fa-chevron-right"></i>Products</a></li>
-            <li><a href="index.html#blog"><i class="fas fa-chevron-right"></i>Blog</a></li>
-          </ul>
-        </div>
-        <div class="fc-col">
-          <h4 class="fc-heading">Services</h4>
-          <ul class="fc-list">
-            <li><a href="index.html#services"><i class="fas fa-chevron-right"></i>Custom Software</a></li>
-            <li><a href="index.html#services"><i class="fas fa-chevron-right"></i>Web Applications</a></li>
-            <li><a href="index.html#services"><i class="fas fa-chevron-right"></i>Business Automation</a></li>
-            <li><a href="index.html#services"><i class="fas fa-chevron-right"></i>SaaS Development</a></li>
-            <li><a href="index.html#services"><i class="fas fa-chevron-right"></i>Cloud Integration</a></li>
-          </ul>
-        </div>
-        <div class="fc-col">
-          <h4 class="fc-heading">Contact Us</h4>
-          <ul class="fc-contact-list">
-            <li>
-              <div class="fc-contact-icon"><i class="fas fa-envelope"></i></div>
-              <div>
-                <span class="fc-contact-label">Email</span>
-                <a href="mailto:info@kargousoft.com" class="fc-contact-val">info@kargousoft.com</a>
-              </div>
-            </li>
-            <li>
-              <div class="fc-contact-icon"><i class="fas fa-phone"></i></div>
-              <div>
-                <span class="fc-contact-label">Phone</span>
-                <a href="tel:+880000000000" class="fc-contact-val">+880 000 000 000</a>
-              </div>
-            </li>
-            <li>
-              <div class="fc-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-              <div>
-                <span class="fc-contact-label">Location</span>
-                <span class="fc-contact-val">Bangladesh</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bar">
-        <div class="container footer-bar-inner">
-          <p>&copy; <span id="year"></span> KargouSoft. All Rights Reserved.</p>
-          <p>Made with <i class="fas fa-heart" style="color:#ff6500"></i> in Bangladesh</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+/* Sidebar */
+.emp-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  position: sticky;
+  top: calc(var(--nav-height) + 20px);
+}
 
-  <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
-  <script src="script.js"></script>
-</body>
-</html>
+.emp-photo-wrap {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 4px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 101, 0, 0.35);
+  box-shadow: 0 0 0 6px rgba(255, 101, 0, 0.08);
+}
+.emp-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.emp-status {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 0.58rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 50px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.emp-status span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  animation: pulseDot 2s infinite;
+}
+@keyframes pulseDot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.emp-id-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(255, 101, 0, 0.1);
+  border: 1px solid rgba(255, 101, 0, 0.22);
+  color: var(--primary);
+  font-size: 0.68rem;
+  font-weight: 700;
+  border-radius: 50px;
+  padding: 4px 16px;
+  align-self: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.emp-name {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--heading);
+  text-align: center;
+  line-height: 1.3;
+  margin: 0;
+}
+.emp-title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.emp-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.emp-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 9px 12px;
+  transition: border-color 0.25s ease;
+}
+.emp-contact-list li:hover {
+  border-color: rgba(255, 101, 0, 0.28);
+}
+.emp-contact-icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  background: rgba(255, 101, 0, 0.1);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 0.74rem;
+}
+.emp-contact-label {
+  display: block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+.emp-contact-val {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: color 0.2s;
+  word-break: break-all;
+}
+a.emp-contact-val:hover {
+  color: var(--primary);
+}
+
+.emp-social-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 4px 0;
+}
+.emp-social-row a {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+.emp-social-row a:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.emp-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 10px 16px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+  margin-top: 4px;
+}
+.emp-back-btn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Main content */
+.emp-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.emp-about-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+}
+.emp-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.emp-section-title i {
+  color: var(--primary);
+  font-size: 0.88rem;
+}
+.emp-about-card p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .team-section {
+    padding: 56px 0 64px;
+  }
+  .emp-grid {
+    grid-template-columns: 290px 1fr;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-hero {
+    min-height: 260px;
+    padding: calc(var(--nav-height) + 40px) 20px 48px;
+  }
+  .team-hero-content h1 {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+  .team-hero-content p {
+    font-size: 0.82rem;
+  }
+
+  .team-section {
+    padding: 44px 0 52px;
+  }
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .team-card-body {
+    padding: 14px 16px 16px;
+  }
+  .team-card-body h3 {
+    font-size: 0.88rem;
+  }
+  .team-role {
+    font-size: 0.7rem;
+  }
+  .team-btn {
+    font-size: 0.68rem;
+    padding: 5px 12px;
+  }
+
+  .emp-section {
+    padding: calc(var(--nav-height) + 28px) 0 52px;
+  }
+  .emp-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .emp-sidebar {
+    position: static;
+  }
+  .emp-about-card {
+    padding: 20px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .team-hero-content h1 {
+    font-size: 1.6rem;
+  }
+  .emp-name {
+    font-size: 1.05rem;
+  }
+  .emp-title {
+    font-size: 0.74rem;
+  }
+}
