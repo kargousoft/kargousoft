@@ -2,7 +2,6 @@
    KargouSoft — style.css
    ============================================================ */
 
-/* ---- LIGHT MODE ---- */
 :root {
   --primary: #ff6500;
   --primary-dark: #cc5000;
@@ -46,7 +45,6 @@
   --nav-height: 62px;
 }
 
-/* ---- DARK MODE ---- */
 [data-theme="dark"] {
   --nav-bg: #404041;
   --nav-border: rgba(255, 255, 255, 0.08);
@@ -706,7 +704,7 @@ button {
 }
 
 /* ============================================================
-   PRODUCTS
+   PRODUCTS — fixed tag position
    ============================================================ */
 .products-sec {
   background: var(--bg-2);
@@ -731,12 +729,15 @@ button {
   box-shadow: var(--shadow-card);
   border-color: rgba(255, 101, 0, 0.22);
 }
+
+/* image box — position:relative is required for .product-tag */
 .product-img-box {
   position: relative;
   width: 100%;
   overflow: hidden;
   flex-shrink: 0;
   line-height: 0;
+  background: var(--bg-3);
 }
 .product-photo {
   display: block;
@@ -749,17 +750,23 @@ button {
 .product-card:hover .product-photo {
   transform: scale(1.07);
 }
+
+/* tag badge — positioned over image */
 .product-tag {
   position: absolute;
   top: 8px;
   left: 8px;
+  z-index: 2;
   background: var(--primary);
   color: #fff;
   font-size: 0.6rem;
   font-weight: 700;
-  padding: 3px 9px;
+  padding: 4px 10px;
   border-radius: 50px;
+  line-height: 1.4;
+  white-space: nowrap;
 }
+
 .product-body {
   padding: 12px 14px;
   flex: 1;
@@ -802,7 +809,7 @@ button {
 }
 
 /* ============================================================
-   BLOG
+   BLOG — fixed badge position
    ============================================================ */
 .blog-sec {
   background: var(--bg);
@@ -827,12 +834,15 @@ button {
   box-shadow: var(--shadow-card);
   border-color: rgba(255, 101, 0, 0.2);
 }
+
+/* image box — position:relative required */
 .blog-img-box {
   position: relative;
   width: 100%;
   overflow: hidden;
   flex-shrink: 0;
   line-height: 0;
+  background: var(--bg-3);
 }
 .blog-photo {
   display: block;
@@ -845,32 +855,43 @@ button {
 .blog-card:hover .blog-photo {
   transform: scale(1.07);
 }
+
+/* category badge */
 .blog-cat {
   position: absolute;
   top: 10px;
   left: 10px;
+  z-index: 2;
   background: var(--primary);
   color: #fff;
-  font-size: 0.6rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  padding: 3px 10px;
+  padding: 4px 11px;
   border-radius: 50px;
+  line-height: 1.4;
+  white-space: nowrap;
 }
+
+/* read time badge */
 .blog-time {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(0, 0, 0, 0.55);
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.58);
   backdrop-filter: blur(4px);
   color: #fff;
-  font-size: 0.58rem;
+  font-size: 0.6rem;
   font-weight: 600;
-  padding: 3px 9px;
+  padding: 4px 10px;
   border-radius: 50px;
   display: flex;
   align-items: center;
   gap: 4px;
+  line-height: 1.4;
+  white-space: nowrap;
 }
+
 .blog-body {
   padding: 14px 16px;
   flex: 1;
@@ -1089,15 +1110,12 @@ button {
 }
 
 /* ============================================================
-   FOOTER — desktop & tablet IDENTICAL layout
-   Mobile only changes below in @media (max-width: 768px)
+   FOOTER
    ============================================================ */
 .footer {
   background: var(--bg-3);
   border-top: 4px solid var(--primary);
 }
-
-/* This single grid is used for BOTH desktop and tablet */
 .footer-main {
   display: grid;
   grid-template-columns: 2.2fr 1fr 1fr 1.4fr;
@@ -1106,7 +1124,6 @@ button {
   padding-bottom: 48px;
   align-items: start;
 }
-
 .fc-brand {
   display: flex;
   flex-direction: column;
@@ -1154,7 +1171,6 @@ button {
   color: #fff;
   transform: translateY(-2px);
 }
-
 .fc-col {
   display: flex;
   flex-direction: column;
@@ -1201,7 +1217,6 @@ button {
   color: var(--primary);
   gap: 12px;
 }
-
 .fc-contact-list {
   display: flex;
   flex-direction: column;
@@ -1243,7 +1258,6 @@ button {
 a.fc-contact-val:hover {
   color: var(--primary);
 }
-
 .footer-bar {
   border-top: 1px solid var(--border);
 }
@@ -1309,7 +1323,7 @@ a.fc-contact-val:hover {
 }
 
 /* ============================================================
-   RESPONSIVE — 1280px
+   1280px
    ============================================================ */
 @media (max-width: 1280px) {
   .products-grid {
@@ -1325,8 +1339,7 @@ a.fc-contact-val:hover {
 }
 
 /* ============================================================
-   RESPONSIVE — 1024px  TABLET
-   footer-main is NOT changed here — stays identical to desktop
+   1024px TABLET
    ============================================================ */
 @media (max-width: 1024px) {
   .sec {
@@ -1432,19 +1445,23 @@ a.fc-contact-val:hover {
     padding: 20px 18px;
   }
 
+  .footer-main {
+    grid-template-columns: 2.2fr 1fr 1fr 1.4fr;
+    gap: 36px;
+    padding-top: 44px;
+    padding-bottom: 40px;
+  }
+
   .section-title {
     font-size: clamp(1.35rem, 2.8vw, 1.9rem);
   }
   .section-header {
     margin-bottom: 18px;
   }
-
-  /* footer-main intentionally NOT overridden here
-     so tablet gets exact same layout as desktop     */
 }
 
 /* ============================================================
-   RESPONSIVE — 768px  MOBILE ONLY
+   768px MOBILE
    ============================================================ */
 @media (max-width: 768px) {
   :root {
@@ -1578,6 +1595,12 @@ a.fc-contact-val:hover {
   .product-body p {
     font-size: 0.67rem;
   }
+  .product-tag {
+    font-size: 0.58rem;
+    padding: 3px 8px;
+    top: 7px;
+    left: 7px;
+  }
 
   .blog-grid {
     grid-template-columns: 1fr;
@@ -1594,6 +1617,18 @@ a.fc-contact-val:hover {
   }
   .read-more {
     font-size: 0.68rem;
+  }
+  .blog-cat {
+    font-size: 0.6rem;
+    padding: 3px 9px;
+    top: 8px;
+    left: 8px;
+  }
+  .blog-time {
+    font-size: 0.58rem;
+    padding: 3px 8px;
+    top: 8px;
+    right: 8px;
   }
 
   .contact-grid {
@@ -1627,7 +1662,6 @@ a.fc-contact-val:hover {
     padding: 8px 10px;
   }
 
-  /* ---- FOOTER MOBILE — 2 col grid ---- */
   .footer-main {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
@@ -1635,7 +1669,6 @@ a.fc-contact-val:hover {
     padding-top: 36px;
     padding-bottom: 32px;
   }
-  /* Brand spans full width on top */
   .fc-brand {
     grid-column: 1 / -1;
     padding-bottom: 22px;
@@ -1644,8 +1677,6 @@ a.fc-contact-val:hover {
   .fc-desc {
     max-width: 100%;
   }
-  /* 3 cols after brand become 2+1 naturally in 2-col grid */
-
   .footer-bar-inner {
     flex-direction: column;
     text-align: center;
@@ -1657,7 +1688,7 @@ a.fc-contact-val:hover {
 }
 
 /* ============================================================
-   RESPONSIVE — 480px  SMALL MOBILE
+   480px SMALL MOBILE
    ============================================================ */
 @media (max-width: 480px) {
   :root {
@@ -1765,7 +1796,6 @@ a.fc-contact-val:hover {
     font-size: 0.74rem;
   }
 
-  /* Footer 480px — single column */
   .footer-main {
     grid-template-columns: 1fr;
     gap: 24px;
