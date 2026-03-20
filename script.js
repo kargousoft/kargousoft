@@ -154,9 +154,8 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 /* ---- SCROLL REVEAL ---- */
 const revealEls = document.querySelectorAll(
-  ".service-card, .product-card, .portfolio-item, .blog-card, .about-grid, .contact-info-wrap, .contact-form-wrap",
+  ".service-card, .product-card, .blog-card, .about-grid, .contact-info-wrap, .contact-form-wrap",
 );
-
 if (revealEls.length > 0) {
   const obs = new IntersectionObserver(
     (entries) => {
