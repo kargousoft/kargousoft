@@ -249,10 +249,12 @@ button {
   padding: 0 20px;
   gap: 10px;
 }
+
+/* Logo */
 .nav-logo {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: 1px;
   flex-shrink: 0;
 }
 .logo-k {
@@ -312,7 +314,6 @@ button {
 .nav-cta:hover {
   background: var(--primary-dark);
 }
-
 .nav-right {
   display: flex;
   align-items: center;
@@ -721,30 +722,31 @@ button {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden; /* keep this */
   transition: var(--transition);
   display: flex;
   flex-direction: column;
-  position: relative; /* ADD THIS */
+  /* NO overflow:hidden here — badge needs to stay inside image */
 }
 .product-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-card);
   border-color: rgba(255, 101, 0, 0.22);
 }
+
 .product-img-box {
-  position: relative;
+  position: relative; /* badge anchors here */
   width: 100%;
-  overflow: hidden;
+  overflow: hidden; /* clip image zoom */
   flex-shrink: 0;
   line-height: 0;
   background: var(--bg-3);
+  border-radius: var(--radius) var(--radius) 0 0; /* top corners */
 }
 .product-photo {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16/10;
   object-fit: cover;
   transition: transform 0.55s ease;
 }
@@ -756,7 +758,7 @@ button {
   position: absolute;
   top: 10px;
   left: 10px;
-  z-index: 10;
+  z-index: 2;
   background: var(--primary);
   color: #fff;
   font-size: 0.6rem;
@@ -808,6 +810,7 @@ button {
   border-color: var(--primary);
   transform: translateY(-1px);
 }
+
 /* ============================================================
    BLOG
    ============================================================ */
@@ -824,10 +827,10 @@ button {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
   transition: var(--transition);
   display: flex;
   flex-direction: column;
+  /* NO overflow:hidden here — badges need to stay inside image */
 }
 .blog-card:hover {
   transform: translateY(-5px);
@@ -835,24 +838,20 @@ button {
   border-color: rgba(255, 101, 0, 0.2);
 }
 
-/*
-  KEY FIX — blog-img-box must have:
-  - position: relative  →  so .blog-cat and .blog-time anchor here
-  - line-height: 0      →  kills gap below inline img
-*/
 .blog-img-box {
-  position: relative;
+  position: relative; /* badges anchor here */
   width: 100%;
-  overflow: hidden;
+  overflow: hidden; /* clip image zoom */
   flex-shrink: 0;
   line-height: 0;
   background: var(--bg-3);
+  border-radius: var(--radius) var(--radius) 0 0;
 }
 .blog-photo {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16/9;
   object-fit: cover;
   transition: transform 0.55s ease;
 }
@@ -1133,9 +1132,9 @@ button {
   gap: 12px;
 }
 .footer-logo {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: 1px;
   display: inline-block;
 }
 .fc-tagline {
@@ -1454,7 +1453,6 @@ a.fc-contact-val:hover {
     padding-top: 44px;
     padding-bottom: 40px;
   }
-
   .section-title {
     font-size: clamp(1.35rem, 2.8vw, 1.9rem);
   }
@@ -1698,7 +1696,7 @@ a.fc-contact-val:hover {
   }
 
   .nav-logo {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .theme-toggle {
     width: 30px;
