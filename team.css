@@ -2,9 +2,7 @@
    team.css
    ============================================================ */
 
-/* ============================
-   TEAM HERO
-   ============================ */
+/* TEAM HERO */
 .team-hero {
   position: relative;
   min-height: 320px;
@@ -48,7 +46,7 @@
 .team-hero-content h1 {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
-  color: #ffffff;
+  color: #fff;
   line-height: 1.2;
   margin-bottom: 14px;
   letter-spacing: -0.5px;
@@ -61,9 +59,7 @@
   margin: 0 auto;
 }
 
-/* ============================
-   TEAM SECTION
-   ============================ */
+/* TEAM SECTION */
 .team-section {
   padding: 72px 0 80px;
   background: var(--bg);
@@ -74,9 +70,7 @@
   gap: 24px;
 }
 
-/* ============================
-   TEAM CARD
-   ============================ */
+/* TEAM CARD */
 .team-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -92,7 +86,6 @@
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
   border-color: rgba(255, 101, 0, 0.25);
 }
-
 .team-card-img {
   position: relative;
   width: 100%;
@@ -112,7 +105,6 @@
 .team-card:hover .team-photo {
   transform: scale(1.06);
 }
-
 .team-card-overlay {
   position: absolute;
   inset: 0;
@@ -131,7 +123,6 @@
 .team-card:hover .team-card-overlay {
   opacity: 1;
 }
-
 .team-socials {
   display: flex;
   gap: 10px;
@@ -158,7 +149,6 @@
   color: var(--primary);
   transform: translateY(-2px);
 }
-
 .team-card-body {
   padding: 20px 22px 22px;
   display: flex;
@@ -219,15 +209,12 @@
   font-size: 0.68rem;
 }
 
-/* ============================
-   EMPLOYEE PAGE
-   ============================ */
+/* EMPLOYEE PAGE */
 .emp-section {
   padding: calc(var(--nav-height) + 48px) 0 72px;
   background: var(--bg);
   min-height: 100vh;
 }
-
 .emp-breadcrumb {
   display: flex;
   align-items: center;
@@ -252,15 +239,12 @@
   color: var(--primary);
   font-weight: 600;
 }
-
 .emp-grid {
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: 28px;
   align-items: start;
 }
-
-/* Sidebar */
 .emp-sidebar {
   display: flex;
   flex-direction: column;
@@ -272,7 +256,6 @@
   position: sticky;
   top: calc(var(--nav-height) + 20px);
 }
-
 .emp-photo-wrap {
   position: relative;
   width: 130px;
@@ -324,7 +307,6 @@
     opacity: 0.35;
   }
 }
-
 .emp-id-badge {
   display: flex;
   align-items: center;
@@ -356,7 +338,6 @@
   text-align: center;
   margin-bottom: 4px;
 }
-
 .emp-contact-list {
   display: flex;
   flex-direction: column;
@@ -407,7 +388,6 @@
 a.emp-contact-val:hover {
   color: var(--primary);
 }
-
 .emp-social-row {
   display: flex;
   gap: 8px;
@@ -437,7 +417,6 @@ a.emp-contact-val:hover {
   color: #fff;
   transform: translateY(-2px);
 }
-
 .emp-back-btn {
   display: flex;
   align-items: center;
@@ -463,14 +442,11 @@ a.emp-contact-val:hover {
   color: #fff;
   transform: translateY(-1px);
 }
-
-/* Main content */
 .emp-main {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
 .emp-about-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -498,9 +474,7 @@ a.emp-contact-val:hover {
   line-height: 1.85;
 }
 
-/* ============================
-   RESPONSIVE
-   ============================ */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -514,7 +488,6 @@ a.emp-contact-val:hover {
     gap: 22px;
   }
 }
-
 @media (max-width: 768px) {
   .team-hero {
     min-height: 260px;
@@ -526,7 +499,6 @@ a.emp-contact-val:hover {
   .team-hero-content p {
     font-size: 0.82rem;
   }
-
   .team-section {
     padding: 44px 0 52px;
   }
@@ -547,7 +519,6 @@ a.emp-contact-val:hover {
     font-size: 0.68rem;
     padding: 5px 12px;
   }
-
   .emp-section {
     padding: calc(var(--nav-height) + 28px) 0 52px;
   }
@@ -562,7 +533,6 @@ a.emp-contact-val:hover {
     padding: 20px 18px;
   }
 }
-
 @media (max-width: 480px) {
   .team-grid {
     grid-template-columns: 1fr;
